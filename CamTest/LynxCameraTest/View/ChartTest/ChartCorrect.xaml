@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="SLPhotoTest.ChartTest.ChartCorrect"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="100" Width="250">
+
+    <Grid x:Name="LayoutRoot" Background="MediumSeaGreen" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="50*" />
+        </Grid.ColumnDefinitions>
+
+        <Button Margin="3" Name="buttonSource" Command="{Binding ShowSourcePhotoCommand}">
+            <Button.Content>
+                <StackPanel >
+                    <Image Source="ms-appx:///Assets/ChartTest/SourceChart.png" Stretch="Fill" ></Image>
+                    <TextBlock Text="Source" HorizontalAlignment="Center"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Margin="3" Name="buttonMove" Command="{Binding ShowCorrectPhotoCommand}" Grid.Column="1">
+            <Button.Content>
+                <StackPanel >
+                    <Image Source="ms-appx:///Assets/ChartTest/AimChart.png" Stretch="Fill" ></Image>
+                    <TextBlock Text="Correct" HorizontalAlignment="Center"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Margin="3" Name="buttonSelect" Command="{Binding ShowSelectedPhotoCommand}" Grid.Column="2">
+            <Button.Content>
+                <StackPanel >
+                    <Image Source="ms-appx:///Assets/ChartTest/SelectChart.png" Stretch="Fill" ></Image>
+                    <TextBlock Text="Selected" HorizontalAlignment="Center"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+    </Grid>
+</UserControl>

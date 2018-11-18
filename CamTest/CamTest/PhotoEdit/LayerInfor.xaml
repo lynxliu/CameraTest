@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="SLPhotoTest.PhotoEdit.LayerInfor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400" 
+             xmlns:my="using:SLPhotoTest.PhotoEdit"
+             Width="400" Height="300">
+
+    <Grid x:Name="LayoutRoot" Background="White" Width="400" Height="300">
+        <FlipView Margin="8,46,8,8">
+            <FlipViewItem >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="图片信息"></TextBlock>
+                    <my:PhotoInfor Grid.Row="1"  HorizontalAlignment="Left" Margin="-6,0,0,0" x:Name="photoInfor" VerticalAlignment="Top" Width="384" />
+                </Grid>
+            </FlipViewItem>
+            <FlipViewItem>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="亮度信息"></TextBlock>
+                    <my:PhotoBrightCurve Grid.Row="1"  Height="300" HorizontalAlignment="Left" Margin="10,10,0,0" x:Name="photoBrightInfor" VerticalAlignment="Top" Width="400" />
+                </Grid>
+            </FlipViewItem>
+            <FlipViewItem >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="颜色信息"></TextBlock>
+                    <my:PhotoColorInfor Grid.Row="1"  Height="300" HorizontalAlignment="Left" Margin="10,10,0,0" x:Name="photoColorInfor" VerticalAlignment="Top" Width="400" />
+                </Grid>
+            </FlipViewItem>
+        </FlipView>
+        <Grid Height="34" Margin="8,8,8,0" VerticalAlignment="Top" Name="Title" Background="Beige">
+    		<Button HorizontalAlignment="Right" Margin="0,8,8,8" Width="26" Content="X" Name="buttonClose" Click="buttonClose_Click" />
+            <Button Content="_" Height="21" HorizontalAlignment="Left" Margin="5,7,0,0" Name="buttonMin" VerticalAlignment="Top" Width="21" Click="buttonMin_Click" />
+            <Button Content="口" Height="21" HorizontalAlignment="Left" Margin="30,7,0,0" Name="buttonResume" VerticalAlignment="Top" Width="21" Click="buttonResume_Click" />
+        </Grid>
+    </Grid>
+</UserControl>

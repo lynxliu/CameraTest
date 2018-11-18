@@ -1,0 +1,774 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7F1BFEDE-F39A-4BDC-9353-E91172925DB6}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CamTest</RootNamespace>
+    <AssemblyName>CamTest</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>CamTest_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <ProjectReference Include="..\..\DCTestLibrary\DCTestLibrary.csproj">
+      <Project>{8317e0c7-148a-40ba-9b68-1e48641c0379}</Project>
+      <Name>DCTestLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LFC\LFC.csproj">
+      <Project>{50714eaa-f625-461d-aa5d-d1fc3b6303e8}</Project>
+      <Name>LFC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LynxControlClass\LynxControls.csproj">
+      <Project>{d3384950-c0e2-4569-b8a1-caf39a88635f}</Project>
+      <Name>LynxControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.xaml.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CameraTestDesktop.xaml.cs">
+      <DependentUpon>CameraTestDesktop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CameraTestIcon.xaml.cs">
+      <DependentUpon>CameraTestIcon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CameraTestProject.xaml.cs">
+      <DependentUpon>CameraTestProject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChartTest\AberrationChartTest.xaml.cs">
+      <DependentUpon>AberrationChartTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChartTest\ChartCorrect.xaml.cs">
+      <DependentUpon>ChartCorrect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChartTest\ChartTestHelper.cs" />
+    <Compile Include="ChartTest\GrayChartTest.xaml.cs">
+      <DependentUpon>GrayChartTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChartTest\IChartTestWindow.cs" />
+    <Compile Include="ChartTest\ISO12233ExTest.xaml.cs">
+      <DependentUpon>ISO12233ExTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChartTest\ISO12233Test.xaml.cs">
+      <DependentUpon>ISO12233Test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChartTest\ITEGrayscaleChartTest.xaml.cs">
+      <DependentUpon>ITEGrayscaleChartTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChartTest\JBAberrationTest.xaml.cs">
+      <DependentUpon>JBAberrationTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChartTest\JBEVTest.xaml.cs">
+      <DependentUpon>JBEVTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChartTest\KDGrayChartTest.xaml.cs">
+      <DependentUpon>KDGrayChartTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChartTest\PhotoEditToolbar.xaml.cs">
+      <DependentUpon>PhotoEditToolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChartTest\TestParameterMenu.xaml.cs">
+      <DependentUpon>TestParameterMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChartTest\XMarkTest.xaml.cs">
+      <DependentUpon>XMarkTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChartTest\XRiteTest.xaml.cs">
+      <DependentUpon>XRiteTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClipView.xaml.cs">
+      <DependentUpon>ClipView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonParameter.xaml.cs">
+      <DependentUpon>CommonParameter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IImageTestStep.cs" />
+    <Compile Include="ILynxPhotoOperation.cs" />
+    <Compile Include="IParameterTest.cs" />
+    <Compile Include="LChartPhoto.xaml.cs">
+      <DependentUpon>LChartPhoto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LMultiPhoto.xaml.cs">
+      <DependentUpon>LMultiPhoto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoCanvas.xaml.cs">
+      <DependentUpon>PhotoCanvas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\ColorSelect.xaml.cs">
+      <DependentUpon>ColorSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\FontSelect.xaml.cs">
+      <DependentUpon>FontSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\LayerDraw.xaml.cs">
+      <DependentUpon>LayerDraw.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\LayerEdit.xaml.cs">
+      <DependentUpon>LayerEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\LayerIcon.xaml.cs">
+      <DependentUpon>LayerIcon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\LayerInfor.xaml.cs">
+      <DependentUpon>LayerInfor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\LayerManager.xaml.cs">
+      <DependentUpon>LayerManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\LayerMove.xaml.cs">
+      <DependentUpon>LayerMove.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\PhotoAttributeEdit.xaml.cs">
+      <DependentUpon>PhotoAttributeEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\PhotoBrightCurve.xaml.cs">
+      <DependentUpon>PhotoBrightCurve.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\PhotoClipboard.xaml.cs">
+      <DependentUpon>PhotoClipboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\PhotoColorInfor.xaml.cs">
+      <DependentUpon>PhotoColorInfor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\PhotoEditCanvas.xaml.cs">
+      <DependentUpon>PhotoEditCanvas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\PhotoEditManager.cs" />
+    <Compile Include="PhotoEdit\PhotoInfor.xaml.cs">
+      <DependentUpon>PhotoInfor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\PhotoIO.xaml.cs">
+      <DependentUpon>PhotoIO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\PhotoLayer.xaml.cs">
+      <DependentUpon>PhotoLayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\PhotoSelect.xaml.cs">
+      <DependentUpon>PhotoSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoEdit\PhotoView.xaml.cs">
+      <DependentUpon>PhotoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoInfor\PhotoBrightCurve.xaml.cs">
+      <DependentUpon>PhotoBrightCurve.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoInfor\PhotoColorInfor.xaml.cs">
+      <DependentUpon>PhotoColorInfor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoInfor\PhotoFit.xaml.cs">
+      <DependentUpon>PhotoFit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoInfor\PhotoInfor.xaml.cs">
+      <DependentUpon>PhotoInfor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoInfor\PhotoInforToolbar.xaml.cs">
+      <DependentUpon>PhotoInforToolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoInfor\PixEdit.xaml.cs">
+      <DependentUpon>PixEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoTestCommonProc.cs" />
+    <Compile Include="PhotoTestMenu.xaml.cs">
+      <DependentUpon>PhotoTestMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoTest\Aberration.xaml.cs">
+      <DependentUpon>Aberration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoTest\BadPixTest.xaml.cs">
+      <DependentUpon>BadPixTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoTest\BrightDistance.xaml.cs">
+      <DependentUpon>BrightDistance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoTest\ColorTrend.xaml.cs">
+      <DependentUpon>ColorTrend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoTest\Dispersiveness.xaml.cs">
+      <DependentUpon>Dispersiveness.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoTest\Latitude.xaml.cs">
+      <DependentUpon>Latitude.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoTest\Noise.xaml.cs">
+      <DependentUpon>Noise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoTest\PhotoTestToolbar.xaml.cs">
+      <DependentUpon>PhotoTestToolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoTest\PurplePercent.xaml.cs">
+      <DependentUpon>PurplePercent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoTest\RayleiResolution.xaml.cs">
+      <DependentUpon>RayleiResolution.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoTest\SFRResolution.xaml.cs">
+      <DependentUpon>SFRResolution.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoTest\Wave.xaml.cs">
+      <DependentUpon>Wave.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoTest\WhiteBanlance.xaml.cs">
+      <DependentUpon>WhiteBanlance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoViewToolbar.xaml.cs">
+      <DependentUpon>PhotoViewToolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProductView\Company.cs" />
+    <Compile Include="ProductView\PriceCompanyShow.xaml.cs">
+      <DependentUpon>PriceCompanyShow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProductView\Product.cs" />
+    <Compile Include="ProductView\ProductPriceSort.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShutterSpeed.xaml.cs">
+      <DependentUpon>ShutterSpeed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSupport.xaml.cs">
+      <DependentUpon>SystemSupport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SysTimer.xaml.cs">
+      <DependentUpon>SysTimer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestToolBox.xaml.cs">
+      <DependentUpon>TestToolBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\LColorInforShow.xaml.cs">
+      <DependentUpon>LColorInforShow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\LMultiPhotoHeader.xaml.cs">
+      <DependentUpon>LMultiPhotoHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\LPhotoHeaderItem.xaml.cs">
+      <DependentUpon>LPhotoHeaderItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\LPhotoList.xaml.cs">
+      <DependentUpon>LPhotoList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIControl\LynxTabControl.xaml.cs">
+      <DependentUpon>LynxTabControl.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="CamTest_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="2006413141427428.png" />
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\SmallLogo.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="back-1.png" />
+    <Content Include="Images\01.png" />
+    <Content Include="Images\07.png" />
+    <Content Include="Images\11.png" />
+    <Content Include="Images\AberrationChart.png" />
+    <Content Include="Images\AimChart.png" />
+    <Content Include="Images\AppException.png" />
+    <Content Include="Images\Camera.jpg" />
+    <Content Include="Images\CameraTest.png" />
+    <Content Include="Images\ChartDelete.png" />
+    <Content Include="Images\clock.png" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\copy.png" />
+    <Content Include="Images\Crop.png" />
+    <Content Include="Images\CropChart.png" />
+    <Content Include="Images\CurrentTime.png" />
+    <Content Include="Images\document-open-recent-3.png" />
+    <Content Include="Images\EditPhoto.png" />
+    <Content Include="Images\EditVideo.png" />
+    <Content Include="Images\FaceTest.png" />
+    <Content Include="Images\format-text-direction-rtl.png" />
+    <Content Include="Images\GrayChart.png" />
+    <Content Include="Images\help.png" />
+    <Content Include="Images\ISO12233.png" />
+    <Content Include="Images\ISO12233Ex.png" />
+    <Content Include="Images\ITEGrayScaleChart.png" />
+    <Content Include="Images\KDGray.png" />
+    <Content Include="Images\LoadMultiPhoto.png" />
+    <Content Include="Images\min.png" />
+    <Content Include="Images\MorePhoto.png" />
+    <Content Include="Images\Move.png" />
+    <Content Include="Images\Note.png" />
+    <Content Include="Images\paste.png" />
+    <Content Include="Images\Photo.png" />
+    <Content Include="Images\PhotoEdit.png" />
+    <Content Include="Images\PhotoOpen.png" />
+    <Content Include="Images\PhotoSave.png" />
+    <Content Include="Images\Resume.png" />
+    <Content Include="Images\RotateChart.png" />
+    <Content Include="Images\SaveResult.png" />
+    <Content Include="Images\ScaleChart.png" />
+    <Content Include="Images\Select.png" />
+    <Content Include="Images\SelectChart.png" />
+    <Content Include="Images\ShotSpeed.png" />
+    <Content Include="Images\SourceChart.png" />
+    <Content Include="Images\Speed.png" />
+    <Content Include="Images\Test.png" />
+    <Content Include="Images\TestAll.png" />
+    <Content Include="Images\VideoColorChanges.png" />
+    <Content Include="Images\VideoShake.png" />
+    <Content Include="Images\VideoShow.png" />
+    <Content Include="Images\XMarkChart.png" />
+    <Content Include="Images\XRiteChart.png" />
+    <Content Include="Images\ZoomIn.png" />
+    <Content Include="Images\ZoomOut.png" />
+    <Content Include="logo.png" />
+    <Content Include="PhotoInfor\Images\Begin.png" />
+    <Content Include="PhotoInfor\Images\Clear.png" />
+    <Content Include="PhotoInfor\Images\ColorInfor.png" />
+    <Content Include="PhotoInfor\Images\copy.png" />
+    <Content Include="PhotoInfor\Images\edit-redo-6.png" />
+    <Content Include="PhotoInfor\Images\edit-undo-6.png" />
+    <Content Include="PhotoInfor\Images\End.png" />
+    <Content Include="PhotoInfor\Images\paste.png" />
+    <Content Include="PhotoInfor\Images\PhotoInfor.png" />
+    <Content Include="PhotoInfor\Images\Point.png" />
+    <Content Include="PhotoInfor\Images\RGBEdit.png" />
+    <Content Include="PhotoInfor\Images\transform-move.png" />
+    <Content Include="PhotoInfor\Images\transform-rotate.png" />
+    <Content Include="PhotoInfor\Images\transform-scale-2.png" />
+    <Content Include="PhotoInfor\Images\view-object-histogram-logarithmic.png" />
+    <Content Include="PhotoTest\Images\ImageOperation\Copy.png" />
+    <Content Include="PhotoTest\Images\ImageOperation\Move.png" />
+    <Content Include="PhotoTest\Images\ImageOperation\Open.png" />
+    <Content Include="PhotoTest\Images\ImageOperation\Paste.png" />
+    <Content Include="PhotoTest\Images\ImageOperation\Remove.png" />
+    <Content Include="PhotoTest\Images\ImageOperation\Resume.png" />
+    <Content Include="PhotoTest\Images\ImageOperation\Save.png" />
+    <Content Include="PhotoTest\Images\ImageOperation\ZoomIn.png" />
+    <Content Include="PhotoTest\Images\ImageOperation\ZoomOne.png" />
+    <Content Include="PhotoTest\Images\ImageOperation\ZoomOut.png" />
+    <Content Include="PhotoTest\Images\Parameter\Aberration.png" />
+    <Content Include="PhotoTest\Images\Parameter\BadPix.png" />
+    <Content Include="PhotoTest\Images\Parameter\BrightChanges.png" />
+    <Content Include="PhotoTest\Images\Parameter\Dispersiveness.png" />
+    <Content Include="PhotoTest\Images\Parameter\EdgeResov.png" />
+    <Content Include="PhotoTest\Images\Parameter\Noise.png" />
+    <Content Include="PhotoTest\Images\Parameter\PPPercent.png" />
+    <Content Include="PhotoTest\Images\Parameter\TestColor.png" />
+    <Content Include="PhotoTest\Images\Parameter\TestLatitude.png" />
+    <Content Include="PhotoTest\Images\Parameter\TestResov.png" />
+    <Content Include="PhotoTest\Images\Parameter\WaveQ.png" />
+    <Content Include="PhotoTest\Images\Parameter\WhiteBalance.png" />
+    <Content Include="PhotoTest\Images\Test.png" />
+    <Content Include="rounder_06.png" />
+    <Content Include="UIControl\Images\Photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="About.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CameraTestDesktop.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CameraTestIcon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CameraTestProject.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChartTest\AberrationChartTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChartTest\ChartCorrect.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChartTest\GrayChartTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChartTest\ISO12233ExTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChartTest\ISO12233Test.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChartTest\ITEGrayscaleChartTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChartTest\JBAberrationTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChartTest\JBEVTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChartTest\KDGrayChartTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChartTest\PhotoEditToolbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChartTest\TestParameterMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChartTest\XMarkTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChartTest\XRiteTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ClipView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CommonParameter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LChartPhoto.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LMultiPhoto.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoCanvas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\ColorSelect.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\FontSelect.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\LayerDraw.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\LayerEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\LayerIcon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\LayerInfor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\LayerManager.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\LayerMove.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\PhotoAttributeEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\PhotoBrightCurve.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\PhotoClipboard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\PhotoColorInfor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\PhotoEditCanvas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\PhotoInfor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\PhotoIO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\PhotoLayer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\PhotoSelect.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoEdit\PhotoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoInfor\PhotoBrightCurve.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoInfor\PhotoColorInfor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoInfor\PhotoFit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoInfor\PhotoInfor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoInfor\PhotoInforToolbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoInfor\PixEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoTestMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoTest\Aberration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoTest\BadPixTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoTest\BrightDistance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoTest\ColorTrend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoTest\Dispersiveness.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoTest\Latitude.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoTest\Noise.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoTest\PhotoTestToolbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoTest\PurplePercent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoTest\RayleiResolution.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoTest\SFRResolution.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoTest\Wave.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoTest\WhiteBanlance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoViewToolbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProductView\PriceCompanyShow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ShutterSpeed.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SystemSupport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SysTimer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TestToolBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\LColorInforShow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\LMultiPhotoHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\LPhotoHeaderItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\LPhotoList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIControl\LynxTabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

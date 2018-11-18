@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="SLPhotoTest.PhotoTest.XMarkTest"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="400" Width="600" xmlns:my="clr-namespace:SLPhotoTest" xmlns:my1="clr-namespace:SLPhotoTest.ChartTest" xmlns:my2="clr-namespace:SLPhotoTest.PhotoInfor" xmlns:my3="clr-namespace:SLPhotoTest.UIControl"
+              PointerPressed="UserControl_PointerPressed">
+    <Grid x:Name="LayoutRoot" Width="600" Height="400">
+        <ProgressBar Margin="5,383,10,6" Name="processbar" Value="0" Foreground="Blue" Background="Yellow" Canvas.ZIndex="10"/>
+        <Rectangle RadiusX="7" RadiusY="7" Margin="0,0,0,0">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFCDD0CF" Offset="1"/>
+                    <GradientStop Color="White" Offset="0.789"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Canvas Canvas.ZIndex="20" x:Name="Title" Height="25" VerticalAlignment="Top"  Margin="5,5,2,0" Background="Azure">
+            <Image Name="Icon" Source="/SLPhotoTest;component/images/01.png" Height="50" Canvas.Left="-25" Canvas.Top="-25" Width="50"></Image>
+            <TextBlock Width="128" TextWrapping="Wrap" Canvas.Left="27" Height="25" FontSize="20" Canvas.Top="0" FontFamily="Trebuchet MS"><Run Text="XMark测试卡"/></TextBlock>
+            <Button Width="25" Height="25" Click="buttonParameterSave_Click" Canvas.Left="510" Canvas.Top="0" ToolTipService.ToolTip="保存结果到项目">
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/images/format-text-direction-rtl.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button Width="25" Height="25" Click="buttonToIcon_Click" Canvas.Left="535" Canvas.Top="0" ToolTipService.ToolTip="隐藏">
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/Images/min.png"></Image>
+                </Button.Content>
+            </Button>
+
+            <Button Width="25" Height="25" Click="buttonClose_Click" Canvas.Left="560" Canvas.Top="0" ToolTipService.ToolTip="关闭">
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/Images/close.png"></Image>
+                </Button.Content>
+            </Button>
+            <my2:PhotoInforToolbar Canvas.Left="254" Canvas.Top="-12" Height="37" x:Name="photoInforTool1" Width="256" />
+        </Canvas>
+        <ScrollViewer Margin="411,76,5,177">
+            <StackPanel x:Name="ResultPanel" Height="320" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <Grid>
+                    <TextBlock Text="测试结果" TextWrapping="Wrap" Margin="0,0,79,0" />
+                    <Button ToolTipService.ToolTip="删除测试结果" Content="x" Height="18" HorizontalAlignment="Left" Margin="133,-3,0,0" Name="buttonClearResult" VerticalAlignment="Top" Width="18" FontStretch="Expanded" BorderThickness="0" Click="buttonClearResult_Click" />
+                </Grid>
+                <Button Content="畸变" Height="25" HorizontalAlignment="Left"  Name="buttonAberration" VerticalAlignment="Top" Width="150" Click="XMarkAberration_Click"/>
+                <Button Content="亮度一致性" Height="25" HorizontalAlignment="Left"  Name="buttonBrightChanges" VerticalAlignment="Top" Width="150" Click="XMarkBrightChanges_Click"/>
+                <Button Content="色彩趋向误差" Height="25" HorizontalAlignment="Left"  Name="buttonColorTrend" VerticalAlignment="Top" Width="150" Click="XMarkColorDis_Click"/>
+                <Button Content="色散（垂直）" Height="25" HorizontalAlignment="Left"  Name="buttonHDispersiveness" VerticalAlignment="Top" Width="150" Click="HDispersiveness_Click"/>
+                <Button Content="色散（水平）" Height="25" HorizontalAlignment="Left"  Name="buttonVDispersiveness" VerticalAlignment="Top" Width="150" Click="VDispersiveness_Click"/>
+                <Button Content="分辨率(线扩散函数,水平)" Height="25" HorizontalAlignment="Left"  Name="buttonHEdgeResoveLines" VerticalAlignment="Top" Width="150" Click="XMarkHMTF_Click"/>
+                <Button Content="分辨率（线扩散函数，垂直）" Height="25" HorizontalAlignment="Left"  Name="buttonVEdgeResoveLines" VerticalAlignment="Top" Width="150" Click="XMarkVMTF_Click"/>
+                <Button Content="动态范围(宽容度)" Height="25" HorizontalAlignment="Left"  Name="buttonLatitude" VerticalAlignment="Top" Width="150" Click="XMarkLatitude_Click"/>
+                <Button Content="噪点" Height="25" HorizontalAlignment="Left"  Name="buttonNoise" VerticalAlignment="Top" Width="150" Click="XMarkNoise_Click"/>
+                <Button Content="紫边抑制" Height="25" HorizontalAlignment="Left"  Name="buttonPurplePercent" VerticalAlignment="Top" Width="150" Click="PurplePercent_Click"/>
+                <Button Content="成像一致性" Height="25" HorizontalAlignment="Left"  Name="buttonWaveQ" VerticalAlignment="Top" Width="150" Click="XMarkWaveQ_Click"/>
+                <Button Content="白平衡" Height="25" HorizontalAlignment="Left"  Name="buttonWhiteBanlance" VerticalAlignment="Top" Width="150" Click="XMarkWhiteBalance_Click"/>
+
+            </StackPanel>
+            </ScrollViewer>
+        <my:LChartPhoto Canvas.ZIndex="5" Height="303" HorizontalAlignment="Left" Margin="5,78,0,0" x:Name="lChartPhoto" VerticalAlignment="Top" Width="405" />
+        <my1:PhotoEditToolbar Canvas.ZIndex="10" Height="40" HorizontalAlignment="Left" Margin="5,31,0,0" x:Name="photoEditToolbar" VerticalAlignment="Top" Width="578" />
+        <my1:ChartCorrect Height="152" HorizontalAlignment="Left" Margin="416,229,0,0" x:Name="chartCorrect1" VerticalAlignment="Top" Width="172" />
+        <my3:LPhotoList HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,85,0,0" x:Name="lPhotoList1" Visibility="Collapsed"  Canvas.ZIndex="6"/>
+        <Image  ToolTipService.ToolTip="测试照片列表" Margin="-5,70,579,303" Name="imageMulti" Source="/SLPhotoTest;component/images/MorePhoto.png" Stretch="Fill" Canvas.ZIndex="7" PointerPressed="imageMulti_PointerPressed" />
+    </Grid>
+</UserControl>

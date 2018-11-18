@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="SLPhotoTest.PhotoEdit.LayerEdit"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="150" d:DesignWidth="200" Height="220" Width="260" xmlns:my="using:SilverlightLynxControls">
+
+    <Grid x:Name="LayoutRoot" Background="White" Height="220" Width="260">
+        <Button Content="&lt;-" Height="27" HorizontalAlignment="Left" Margin="8,21,0,0" Name="buttonRedLess" VerticalAlignment="Top" Width="40" Click="buttonRedLess_Click" />
+        <Button Content="->" Height="27" HorizontalAlignment="Left" Margin="143,21,0,0" Name="buttonRedMore" VerticalAlignment="Top" Width="42" Click="buttonRedMore_Click" />
+        <Button Content="&lt;-" Height="27" HorizontalAlignment="Left" Margin="8,52,0,0" Name="buttonGreenLess" VerticalAlignment="Top" Width="40" Click="buttonGreenLess_Click" />
+        <Button Content="-&gt;" Height="27" HorizontalAlignment="Left" Margin="143,52,0,0" Name="buttonGreenMore" VerticalAlignment="Top" Width="42" Click="buttonGreenMore_Click" />
+        <Button Content="&lt;-" Height="27" HorizontalAlignment="Left" Margin="8,83,0,0" Name="buttonBlueLess" VerticalAlignment="Top" Width="40" Click="buttonBlueLess_Click" />
+        <Button Content="-&gt;" Height="27" HorizontalAlignment="Left" Margin="143,83,0,0" Name="buttonBlueMore" VerticalAlignment="Top" Width="42" Click="buttonBlueMore_Click" />
+        <Button Content="&lt;-" Height="27" HorizontalAlignment="Left" Margin="8,113,0,0" Name="button1BrightLess" VerticalAlignment="Top" Width="40" Click="button1BrightLess_Click" />
+        <Button Content="-&gt;" Height="27" HorizontalAlignment="Left" Margin="143,113,0,0" Name="buttonBrightMore" VerticalAlignment="Top" Width="42" Click="buttonBrightMore_Click" />
+        <Button Content="X" Height="21" HorizontalAlignment="Right" Name="buttonClose" VerticalAlignment="Top" Width="20" Click="buttonClose_Click" />
+        <Image Height="33" HorizontalAlignment="Left" Margin="-8,-12,0,0" Name="imageIcon" Stretch="Fill" VerticalAlignment="Top" Width="28" />
+        <Button Content="Blur" Height="27" HorizontalAlignment="Left" Margin="8,160,0,0" Name="buttonBlur" VerticalAlignment="Top" Width="40" />
+        <Button Content="Mosaic" Height="27" HorizontalAlignment="Left" Margin="8,193,0,0" Name="buttonMosaic" VerticalAlignment="Top" Width="40" />
+        <Button Content="Contract" Height="25" HorizontalAlignment="Left" Margin="129,160,0,0" Name="buttonContract" VerticalAlignment="Top" Width="50" Click="buttonContract_Click" />
+        <my:LynxUpDown Height="27" HorizontalAlignment="Left" Margin="187,159,0,0" Name="textBoxContract" VerticalAlignment="Top" Width="61" IntMin="-100" />
+        <Button Content="Gray" Height="25" HorizontalAlignment="Left" Margin="129,192,0,0" Name="buttonGray" VerticalAlignment="Top" Width="50" Click="buttonGray_Click" />
+        <Button Content="Invert" Height="24" HorizontalAlignment="Left" Margin="187,191,0,0" Name="buttonInvert" VerticalAlignment="Top" Width="56" Click="buttonInvert_Click" />
+        <my:LynxUpDown Height="27" HorizontalAlignment="Left" Margin="53,160,0,0" Name="textBoxBlur" VerticalAlignment="Top" Width="71" />
+        <my:LynxUpDown Height="23" HorizontalAlignment="Left" Margin="52,194,0,0" Name="textBoxMosaic" VerticalAlignment="Top" Width="72" />
+        <my:LynxUpDown Height="26" HorizontalAlignment="Left" Margin="53,114,0,0" Name="textBoxBright" VerticalAlignment="Top" Width="85" />
+        <my:LynxUpDown Height="27" HorizontalAlignment="Left" Margin="53,21,0,0" Name="textBoxRed" VerticalAlignment="Top" Width="81" Background="Red" BackBush="Red" />
+        <my:LynxUpDown Height="26" HorizontalAlignment="Left" Margin="54,52,0,0" Name="textBoxGreen" VerticalAlignment="Top" Width="80" BackBush="Lime" />
+        <my:LynxUpDown Height="26" HorizontalAlignment="Left" Margin="54,83,0,0" Name="textBoxBlue" VerticalAlignment="Top" Width="82" BackBush="Blue" />
+    </Grid>
+</UserControl>

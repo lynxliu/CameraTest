@@ -1,0 +1,194 @@
+﻿<UserControl x:Class="SLPhotoTest.CameraTestDesktop"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="00" d:DesignWidth="800" BorderBrush="#FFF5DF84" xmlns:my="using:SilverlightLynxControls" xmlns:dataInput="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.Input" Width="1024" Height="668">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="ButtonControlTemplate1" TargetType="Button">
+            <Grid>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="FocusStates">
+                        <VisualState x:Name="Focused"/>
+                        <VisualState x:Name="Unfocused"/>
+                    </VisualStateGroup>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualStateGroup.Transitions>
+                            <VisualTransition From="Normal" GeneratedDuration="00:00:00.2000000" To="MouseOver"/>
+                            <VisualTransition From="MouseOver" GeneratedDuration="00:00:00.2300000" To="Pressed"/>
+                        </VisualStateGroup.Transitions>
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Disabled">
+                            <Storyboard>
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Ellipse x:Name="ellipse" Margin="-1,2,1,-2" Opacity="0" >
+                    <Ellipse.Fill>
+                        <LinearGradientBrush>
+                            <GradientStop Color="Transparent" Offset="1"/>
+                            <GradientStop Color="#FFFFF700"/>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Image Source="logo.png"/>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ButtonControlTemplate2" TargetType="Button">
+            <Grid Margin="1,0,0,0">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="FocusStates">
+                        <VisualState x:Name="Focused"/>
+                        <VisualState x:Name="Unfocused"/>
+                    </VisualStateGroup>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="MouseOver"/>
+                        <VisualState x:Name="Pressed"/>
+                        <VisualState x:Name="Disabled"/>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Rectangle Fill="#33FFFFFF" RadiusX="2" RadiusY="2" HorizontalAlignment="Left" Width="33" Margin="-1,0,0,0">
+                    <Rectangle.Stroke>
+                        <LinearGradientBrush EndPoint="0.115,0.954" StartPoint="0.861,-0.027">
+                            <GradientStop Color="#FF0496B6" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Stroke>
+                </Rectangle>
+                <TextBlock Margin="5,10,5,11" Text="Edit" TextWrapping="Wrap" FontWeight="Bold" FontSize="9.333"/>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ButtonControlTemplate3" TargetType="Button">
+            <Grid>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="FocusStates">
+                        <VisualState x:Name="Focused"/>
+                        <VisualState x:Name="Unfocused"/>
+                    </VisualStateGroup>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="MouseOver"/>
+                        <VisualState x:Name="Pressed"/>
+                        <VisualState x:Name="Disabled"/>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Rectangle Fill="#33FFFFFF" RadiusX="2" RadiusY="2" HorizontalAlignment="Left" Width="35">
+                    <Rectangle.Stroke>
+                        <LinearGradientBrush EndPoint="0.115,0.954" StartPoint="0.861,-0.027">
+                            <GradientStop Color="#FF0496B6" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Stroke>
+                </Rectangle>
+                <TextBlock Margin="0,8" Text="Video" TextWrapping="Wrap" d:LayoutOverrides="Width" FontWeight="Bold"/>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ButtonControlTemplate4" TargetType="Button">
+            <Grid>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="FocusStates">
+                        <VisualState x:Name="Focused"/>
+                        <VisualState x:Name="Unfocused"/>
+                    </VisualStateGroup>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="MouseOver"/>
+                        <VisualState x:Name="Pressed"/>
+                        <VisualState x:Name="Disabled"/>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Rectangle Fill="#33FFFFFF" RadiusX="2" RadiusY="2" HorizontalAlignment="Left" Width="35" Margin="-1,0,0,0">
+                    <Rectangle.Stroke>
+                        <LinearGradientBrush EndPoint="0.115,0.954" StartPoint="0.861,-0.027">
+                            <GradientStop Color="#FF0496B6" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Stroke>
+                </Rectangle>
+                <TextBlock Text="Note" TextWrapping="Wrap" d:LayoutOverrides="Width, Height" FontWeight="Bold" Margin="0,8,0,11"/>
+            </Grid>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <StackPanel Background="Transparent" Width="1024" Height="668">
+        <Canvas x:Name="Desk" PointerPressed="LayoutRoot_PointerPressed" Width="1024" Height="633">
+            <Canvas.Background>
+                <LinearGradientBrush >
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF07A992" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <Image Height="314" Width="800" Canvas.Top="213" Source="back-1.png" Canvas.Left="103" />
+            <TextBlock Height="64" Width="495" Canvas.Left="88" Canvas.Top="96" FontSize="40" TextWrapping="Wrap" FontWeight="Bold" Foreground="#FFEDE2E2" FontFamily="微软雅黑">
+            <Run Text="数字影像"/><Run Text="产品性能测试平台"/></TextBlock>
+            <TextBlock  Canvas.Left="764" Canvas.Top="7" Height="15" Name="textBlockTime" Text="0" Width="102" Foreground="#FFF8E703" Visibility="Collapsed" />
+            <Border BorderBrush="{x:Null}" BorderThickness="0" Canvas.Left="970" Canvas.Top="10" Height="50" Name="border1" Width="50" CornerRadius="15">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#FF0D900D" Offset="0" />
+                        <GradientStop Color="#0003F503" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Image ToolTipService.ToolTip="测试项目" Name="image1" Stretch="Fill" Source="/SLPhotoTest;component/rounder_06.png" PointerPressed="image1_PointerPressed"/>
+            </Border>
+            <Canvas Canvas.Left="3" Canvas.Top="7" Height="5" Name="canvasAbout" Width="5" PointerPressed="canvasAbout_MouseRightButtonDown"/>
+            <HyperlinkButton Canvas.Left="970" Canvas.Top="611" Content="服务支持" Height="18" Name="hyperlinkButtonSupport" Width="50" NavigateUri="http://www.dvworld.com.cn" ToolTipService.ToolTip="www.dvworld.com.cn"/>
+            <TextBlock Canvas.Left="846" Canvas.Top="612" Height="14" Name="textBlockVersion" Text="TextBlock" Width="103" Foreground="Yellow" />
+            <Image Canvas.Left="733" Canvas.Top="6" Height="25" Name="image2" Stretch="Fill" Width="25" Source="/SLPhotoTest;component/images/CurrentTime.png" PointerPressed="image2_PointerPressed"/>
+            <ComboBox ToolTipService.ToolTip="默认的系统Lab色彩模式" Canvas.Left="938" Canvas.Top="579" Height="26" Name="comboBoxLabMode" Width="80" SelectionChanged="comboBoxLabMode_SelectionChanged">
+                <ComboBoxItem Content="CIE" IsSelected="True"/>
+                <ComboBoxItem Content="Photoshop" />
+            </ComboBox>
+        </Canvas>
+        <Canvas Height="35" Name="StackBar" Width="1024">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1EBAA4" Offset="0.526"/>
+                    <GradientStop Color="#FFC2FFFC" Offset="1"/>
+                    <GradientStop Color="#FFA3ECE5"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <Button  Background="{x:Null}" x:Name="PhotoTest" Width="49" Click="PhotoTest_Click" Canvas.Left="0" Canvas.Top="-8" 
+                     PointerEntered="PhotoTest_PointerEntered" PointerExited="PhotoTest_PointerExited" Height="45">
+
+                    <Image Source="/SLPhotoTest;component/images/Photo.png" Width="44"  Stretch="Fill"></Image>
+
+            </Button>
+            <Button Background="{x:Null}" x:Name="CameraTest" Width="55" Click="CameraTest_Click"  Canvas.Left="55" Canvas.Top="-8" 
+                    PointerEntered="CameraTest_PointerEntered" PointerExited="CameraTest_PointerExited" >
+
+                    <Image Source="/SLPhotoTest;component/images/Camera.jpg"></Image>
+
+            </Button>
+            <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" Canvas.Left="116" Canvas.Top="-5" Width="592">
+                <StackPanel Width="580" x:Name="taskList" Orientation="Horizontal"  Height="35"/>
+            </ScrollViewer>
+            <StackPanel Width="271" x:Name="clipList" Orientation="Horizontal" Canvas.Left="714" Height="35"/>
+            <Button Background="{x:Null}" Canvas.Left="991" Height="35" Name="buttonNote" Width="33" Click="buttonNote_Click" >
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/images/Note.png"></Image>
+                </Button.Content>
+            </Button>
+        </Canvas>
+        
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="SilverlightLynxControls.ChildWindowAbout"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="400" Height="300" Background="Gray">
+  <Grid x:Name="LayoutRoot" Margin="2">
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1" />
+    <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1" />
+        <TextBlock Height="31" HorizontalAlignment="Left" Margin="21,14,0,0" Name="label1" VerticalAlignment="Top" Width="107" Text="LFC框架:" FontSize="18" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="60,43,0,0" VerticalAlignment="Top" Width="289" Text="为Silverlight应用设计的轻量级开发框架" FontSize="15" />
+        <TextBlock Height="20" HorizontalAlignment="Left" Margin="289,24,0,0" VerticalAlignment="Top" Width="60" Text="Ver:1.5" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="211,203,0,0" VerticalAlignment="Top" Width="167" Text="Lynx  (lynxliu2002@163.com)" FontStyle="Italic" />
+        <TextBlock Height="100" HorizontalAlignment="Left" Margin="23,80,0,0" Text="帮助轻松一致的进行Silverlight应用的开发。特别是针对数据库类的应用，使用Silverlight技术进行快速的开发。包括数据操作引擎，标准的映射方法约定，标准的界面支持和消息系统" VerticalAlignment="Top" Width="329" TextWrapping="Wrap" />
+        <TextBlock Height="19" HorizontalAlignment="Left" Margin="23,207,0,0" VerticalAlignment="Top" Width="85" Text="2008.12-2009" />
+    </Grid>
+</UserControl>

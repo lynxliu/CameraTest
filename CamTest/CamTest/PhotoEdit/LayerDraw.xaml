@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="SLPhotoTest.PhotoEdit.LayerDraw"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400" Width="400" Height="105">
+    
+    <Grid x:Name="LayoutRoot" Background="White" Height="105">
+        <Button Content="Line" Height="32" HorizontalAlignment="Left" Margin="18,12,0,0" Name="buttonLine" VerticalAlignment="Top" Width="59" Click="buttonLine_Click" />
+        <Button Content="Ellips" Height="32" HorizontalAlignment="Left" Margin="159,12,0,0" Name="buttonEllips" VerticalAlignment="Top" Width="63" Click="buttonEllips_Click" />
+        <Button Content="Free" Height="32" HorizontalAlignment="Left" Margin="245,13,0,0" Name="buttonFree" VerticalAlignment="Top" Width="62" Click="buttonFree_Click" />
+        <Button Content="Text" Height="31" HorizontalAlignment="Left" Margin="313,14,0,0" Name="buttonText" VerticalAlignment="Top" Width="65" Click="buttonText_Click" />
+        <Button Content="Rectangle" Height="33" HorizontalAlignment="Left" Margin="88,12,0,0" Name="buttonRectangle" VerticalAlignment="Top" Width="65" Click="buttonRectangle_Click" />
+        <TextBlock Height="16" HorizontalAlignment="Left" Margin="18,60,0,0" Name="textBlock1" Text="线条" VerticalAlignment="Top" Width="52" />
+        <TextBox Height="30" HorizontalAlignment="Left" Margin="100,61,0,0" Name="textW" Text="1" VerticalAlignment="Top" Width="53" />
+        <Button Content="^" Height="15" HorizontalAlignment="Left" Margin="150,61,0,0" Name="button6" VerticalAlignment="Top" Width="17" />
+        <Button Content="v" Height="15" HorizontalAlignment="Left" Margin="150,76,0,0" Name="button7" VerticalAlignment="Top" Width="17" />
+        <CheckBox Content="填充" Height="16" HorizontalAlignment="Left" Margin="200,60,0,0" Name="checkBox1" VerticalAlignment="Top" Width="70" />
+        <Button Content="颜色" Height="28" HorizontalAlignment="Left" Margin="276,52,0,0" Name="buttonColor" VerticalAlignment="Top" Width="67" Click="buttonColor_Click" />
+        <Button Content="X" Height="19" HorizontalAlignment="Left" Margin="384,6,0,0" Name="buttonClose" VerticalAlignment="Top" Width="17" Click="buttonClose_Click" />
+        <Button Content="字体" Height="29" HorizontalAlignment="Left" Margin="348,52,0,0" Name="buttonFont" VerticalAlignment="Top" Width="48" Click="buttonFont_Click" />
+        <Button Content="BS" Height="21" HorizontalAlignment="Left" Margin="198,82,0,0" Name="buttonBS" VerticalAlignment="Top" Width="54" Click="buttonBS_Click" />
+        <Button Content="ES" Height="19" HorizontalAlignment="Left" Margin="279,82,0,0" Name="buttonES" VerticalAlignment="Top" Width="52" Click="buttonES_Click" />
+    </Grid>
+</UserControl>

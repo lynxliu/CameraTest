@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="SLPhotoTest.ChartTest.KDGrayChartTest"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" 
+             xmlns:my2="using:SilverlightLynxControls"
+            
+    Height="375" Width="600" 
+             xmlns:my="using:SLPhotoTest" 
+             xmlns:my1="using:SLPhotoTest.ChartTest" 
+             xmlns:my3="using:SLPhotoTest.PhotoInfor"
+             xmlns:my4="using:SLPhotoTest.UIControl"
+              PointerPressed="UserControl_PointerPressed">
+    <Grid x:Name="LayoutRoot" >
+        <Image  ToolTipService.ToolTip="测试照片列表" Margin="-5,74,579,274" Name="imageMulti" Source="/SLPhotoTest;component/images/MorePhoto.png" Stretch="Fill" Canvas.ZIndex="7" PointerPressed="imageMulti_PointerPressed" />
+
+        <ProgressBar Height="15" Margin="2,345,0,0" x:Name="processbar" Width="589" Value="0" Foreground="Blue" Background="Yellow" Canvas.ZIndex="10" />
+        <Rectangle RadiusX="7" RadiusY="7" Margin="0,0,0,0">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFCDD0CF" Offset="1"/>
+                    <GradientStop Color="White" Offset="0.789"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Canvas Canvas.ZIndex="20" x:Name="Title" Height="25" VerticalAlignment="Top"  Margin="5,5,5,0" Background="Azure">
+            <Image Name="Icon" Source="/SLPhotoTest;component/images/01.png" Height="50" Canvas.Left="-25" Canvas.Top="-25" Width="50"></Image>
+             <TextBlock Width="164" TextWrapping="Wrap" Canvas.Left="31" Height="25" FontSize="20" Canvas.Top="0" FontFamily="Verdana"><Run Text="柯达灰度卡测试"/></TextBlock>
+            <Button Width="25" Height="25" Click="buttonParameterSave_Click" Canvas.Left="510" Canvas.Top="0" ToolTipService.ToolTip="保存结果到项目">
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/images/format-text-direction-rtl.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button Width="25" Height="25" Click="buttonToIcon_Click" Canvas.Left="535" Canvas.Top="0" ToolTipService.ToolTip="隐藏">
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/Images/min.png"></Image>
+                </Button.Content>
+            </Button>
+
+            <Button Width="25" Height="25" Click="buttonClose_Click" Canvas.Left="560" Canvas.Top="0" ToolTipService.ToolTip="关闭">
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/Images/close.png"></Image>
+                </Button.Content>
+            </Button>
+            <my3:PhotoInforToolbar Canvas.Left="247" Canvas.Top="-12" Height="37" x:Name="photoInforTool1" Width="260" />
+        </Canvas>
+        <my:LChartPhoto Canvas.ZIndex="5" Height="162" HorizontalAlignment="Left" Margin="5,76,0,0" x:Name="lChartPhoto" VerticalAlignment="Top" Width="493" />
+        <my1:PhotoEditToolbar Canvas.ZIndex="10" Height="40" HorizontalAlignment="Left" Margin="5,31,0,0" x:Name="photoEditToolbar" VerticalAlignment="Top" Width="573" />
+        
+        <Canvas Canvas.ZIndex="0" Height="100" HorizontalAlignment="Left" Margin="5,244,0,0" Name="canvasLatitude" VerticalAlignment="Top" Width="495" Background="#FFB6F5B6" />
+        <Grid Height="266" HorizontalAlignment="Left" Margin="504,78,0,0" Name="grid1" VerticalAlignment="Top" Width="90">
+            <Button ToolTipService.ToolTip="用户选择采样的水平位置" Content="交互测试" Height="33" HorizontalAlignment="Left" Margin="5,127,0,0" Name="buttonInteractiveTest" VerticalAlignment="Top" Width="76" Click="buttonInteractiveTest_Click" Foreground="Blue" />
+            <TextBlock Height="34" HorizontalAlignment="Left" Margin="7,8,0,0" Name="textBlock1" Text="识别级数" VerticalAlignment="Top" Width="77" />
+            <TextBlock Height="31" HorizontalAlignment="Left" Margin="7,37,0,0" Name="textBlockLatitude" Text="0" VerticalAlignment="Top" Width="74" />
+            <TextBlock Height="27" HorizontalAlignment="Left" Margin="7,82,0,0" Name="textBlock3" Text="识别级差" VerticalAlignment="Top" Width="66" />
+            <my2:LynxUpDown Height="22" HorizontalAlignment="Left" Margin="6,99,0,0" Name="lynxUpDown1" VerticalAlignment="Top" Width="59" IntMin="1" IntValue="7" />
+            <TextBlock Height="24" HorizontalAlignment="Left" Margin="5,233,0,0" Name="textBlockInteractively" Text="0" VerticalAlignment="Top" Width="74" />
+            <TextBlock Height="22" HorizontalAlignment="Left" Margin="5,166,0,0" Name="textBlock2" Text="垂直位置：" VerticalAlignment="Top" Width="76" />
+            <TextBlock Height="17" HorizontalAlignment="Left" Margin="6,210,0,0" Name="textBlock4" Text="分辨级数：" VerticalAlignment="Top" Width="74" />
+            <TextBlock Height="19" HorizontalAlignment="Left" Margin="6,185,0,0" Name="textBlockHeight" Text="0" VerticalAlignment="Top" Width="71" />
+        </Grid>
+        <my4:LPhotoList Margin="12,88,0,0" x:Name="lPhotoList1" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.ZIndex="6" Visibility="Collapsed"/>
+    </Grid>
+</UserControl>

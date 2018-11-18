@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="SLPhotoTest.ChartTest.AberrationChartTest"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Width="600" Height="400" xmlns:my="using:SLPhotoTest" 
+             xmlns:my1="clr-namespace:SLPhotoTest.ChartTest" 
+             xmlns:my2="clr-namespace:SLPhotoTest.PhotoInfor"
+             xmlns:my3="clr-namespace:SLPhotoTest.UIControl"
+             PointerPressed="UserControl_PointerPressed" >
+    <Grid x:Name="LayoutRoot" Height="385">
+        <Image ToolTipService.ToolTip="测试照片列表" Margin="-5,70,579,288" Name="imageMulti" Source="/SLPhotoTest;component/images/MorePhoto.png" Stretch="Fill" Canvas.ZIndex="7" PointerPressed="imageMulti_PointerPressed" />
+        <ProgressBar Margin="0,369,0,4" Name="processbar" Width="574" Value="0" Foreground="Blue" Background="Yellow" Canvas.ZIndex="10"/>
+        <Rectangle Height="385" HorizontalAlignment="Left" VerticalAlignment="Top" Width="600" RadiusX="7" RadiusY="7" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFCDD0CF" Offset="1"/>
+                    <GradientStop Color="White" Offset="0.793"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Canvas Canvas.ZIndex="20" x:Name="Title" Height="25" VerticalAlignment="Top"  Margin="5,5,5,0" Background="Azure">
+            <Image Name="Icon" Source="/SLPhotoTest;component/images/01.png" Height="50" Canvas.Left="-25" Canvas.Top="-25" Width="50"></Image>
+            <TextBlock Width="131" TextWrapping="Wrap" Canvas.Left="31" Height="25" FontSize="20" Canvas.Top="0" FontFamily="Trebuchet MS"><Run Text="畸变测试"/></TextBlock>
+            <Button Width="25" Height="25" Click="buttonParameterSave_Click" Canvas.Left="510" Canvas.Top="0" ToolTipService.ToolTip="保存结果到项目">
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/images/format-text-direction-rtl.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button Width="25" Height="25" Click="buttonToIcon_Click" Canvas.Left="535" Canvas.Top="0" ToolTipService.ToolTip="隐藏">
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/Images/min.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button Width="25" Height="25" Click="buttonClose_Click" Canvas.Left="560" Canvas.Top="0" ToolTipService.ToolTip="关闭">
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/Images/close.png"></Image>
+                </Button.Content>
+            </Button>
+            <my2:PhotoInforToolbar Height="37" x:Name="photoInforTool1" Width="261" Canvas.Left="251" Canvas.Top="-12" />
+        </Canvas>
+        <my1:PhotoEditToolbar HorizontalAlignment="Left" Margin="5,35,0,0" x:Name="photoEditToolbar" VerticalAlignment="Top" Canvas.ZIndex="10"/>
+        <Grid Height="290" HorizontalAlignment="Left" Margin="419,77,0,0" Name="grid1" VerticalAlignment="Top" Width="171">
+            <TextBlock Height="19" HorizontalAlignment="Left" Margin="7,11,0,0" Name="textBlock1" Text="畸变测试值：" VerticalAlignment="Top" Width="67" />
+            <TextBlock Height="20" HorizontalAlignment="Left" Margin="80,11,0,0" Name="TextAberration" Text="0" VerticalAlignment="Top" Width="80" FontWeight="Bold" FontSize="12" />
+            <Button ToolTipService.ToolTip="用户自行选择计算畸变的水平位置，计算该处的畸变距离"  Content="交互式测试" Height="23" HorizontalAlignment="Left" Margin="7,170,0,0" Name="buttonInterActiveTest" VerticalAlignment="Top" Width="111" Click="buttonInterActiveTest_Click" Background="#FF10FC47" Foreground="Blue">
+                <Button.BorderBrush>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#FFA3AEB9" Offset="0" />
+                        <GradientStop Color="#FF8399A9" Offset="0.375" />
+                        <GradientStop Color="#FF718597" Offset="0.375" />
+                        <GradientStop Color="#FF1B90E8" Offset="1" />
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+            </Button>
+            <TextBlock Height="36" HorizontalAlignment="Left" Margin="7,199,0,0" Name="textBlock2" Text="选择的水平线条，在两侧垂直黑线之间的像素数" VerticalAlignment="Top" Width="158" TextWrapping="Wrap" />
+            <TextBlock Height="20" HorizontalAlignment="Left" Margin="98,215,0,0" Name="textBlackLength" Text="0" VerticalAlignment="Top" Width="69" />
+            <TextBlock Height="19" HorizontalAlignment="Left" Margin="7,37,0,0" Name="textBlock3" Text="中央黑色垂直线：" VerticalAlignment="Top" Width="90" />
+            <TextBlock Height="21" HorizontalAlignment="Left" Margin="106,35,0,0" Name="textBlockCenterBlackLineNum" Text="0" VerticalAlignment="Top" Width="38" />
+            <TextBlock Height="19" HorizontalAlignment="Left" Margin="7,78,0,0" Name="textBlock4" Text="顶部黑色垂直线：" VerticalAlignment="Top" Width="91" />
+            <TextBlock Height="21" HorizontalAlignment="Left" Margin="106,59,0,0" Name="textBlockCenterBlackLinePix" Text="0" VerticalAlignment="Top" Width="38" />
+            <TextBlock Height="19" HorizontalAlignment="Left" Margin="6,118,0,0" Name="textBlock6" Text="底部黑色垂直线：" VerticalAlignment="Top" Width="91" />
+            <TextBlock Height="21" HorizontalAlignment="Left" Margin="106,78,0,0" Name="textBlockTopBlackLineNum" Text="0" VerticalAlignment="Top" Width="38" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="64,57,0,0" Name="textBlock8" Text="距离：" VerticalAlignment="Top" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="64,95,0,0" Name="textBlock9" Text="距离：" VerticalAlignment="Top" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="64,137,0,0" Name="textBlock10" Text="距离：" VerticalAlignment="Top" />
+            <TextBlock Height="21" HorizontalAlignment="Left" Margin="105,97,0,0" Name="textBlockTopBlackLinePix" Text="0" VerticalAlignment="Top" Width="38" />
+            <TextBlock Height="21" HorizontalAlignment="Left" Margin="105,118,0,0" Name="textBlockBottomBlackLineNum" Text="0" VerticalAlignment="Top" Width="38" />
+            <TextBlock Height="21" HorizontalAlignment="Left" Margin="105,139,0,0" Name="textBlockBottomBlackLinePix" Text="0" VerticalAlignment="Top" Width="38" />
+            <Button ToolTipService.ToolTip="用户自行选择左侧边界"  Content="左边界" Height="26" HorizontalAlignment="Left" Margin="6,232,0,0" Name="buttonLS" VerticalAlignment="Top" Width="39" Click="buttonLS_Click" Foreground="Blue" />
+            <Button ToolTipService.ToolTip="用户自行选择右侧边界"  Content="右边界" Height="26" HorizontalAlignment="Left" Margin="80,232,0,0" Name="buttonRS" VerticalAlignment="Top" Width="38" Click="buttonRS_Click" Foreground="Blue" />
+            <Button Content="距离计算" Height="26" HorizontalAlignment="Left" Margin="6,260,0,0" Name="buttonGetLength" VerticalAlignment="Top" Width="54" Click="buttonGetLength_Click" />
+            <TextBlock Height="27" HorizontalAlignment="Left" Margin="71,260,0,0" Name="textBlockL" Text="0" VerticalAlignment="Top" Width="47" />
+            <Button ToolTipService.ToolTip="清除选择"  Content="清除" Height="26" HorizontalAlignment="Left" Margin="125,232,0,0" Name="buttonClear" VerticalAlignment="Top" Width="43" Click="buttonClear_Click" />
+            <Button ToolTipService.ToolTip="按照国标测试畸变" Content="国标" Height="23" HorizontalAlignment="Left" Margin="130,170,0,0" Name="buttonJB" VerticalAlignment="Top" Width="38" Click="buttonJB_Click" />
+        </Grid>
+        <my:LChartPhoto Height="290" HorizontalAlignment="Left" Margin="5,77,0,0" x:Name="lChartPhoto1" VerticalAlignment="Top" Width="400" Canvas.ZIndex="5"/>
+        <my3:LPhotoList  Margin="13,85,0,0" x:Name="lPhotoList1" Canvas.ZIndex="6" Visibility="Collapsed" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+    </Grid>
+</UserControl>

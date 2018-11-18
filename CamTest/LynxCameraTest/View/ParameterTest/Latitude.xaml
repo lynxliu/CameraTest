@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="SLPhotoTest.PhotoTest.Latitude"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="using:LynxControls"
+    mc:Ignorable="d" xmlns:my="using:SilverlightLynxControls"
+             >
+    <Grid x:Name="LayoutRoot" Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="109*"/>
+            <ColumnDefinition Width="51*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="125*"/>
+            <RowDefinition Height="218*"/>
+            <RowDefinition Height="137*"/>
+        </Grid.RowDefinitions>
+        <Border Margin="5" BorderBrush="Blue" BorderThickness="2" CornerRadius="3" Grid.Row="1" Grid.RowSpan="2">
+            <Canvas   VerticalAlignment="Bottom" x:Name="DrawCanvas"/>
+        </Border>
+        <StackPanel Background="#FFC9F3F8" Margin="5" x:Name="stackImages" Orientation="Horizontal" Grid.ColumnSpan="2"/>
+        <local:LynxPhotoViewControl Margin="5" x:Name="lChartPhoto1" Grid.Row="1" Grid.Column="1" />
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="29*"/>
+                <RowDefinition Height="33*"/>
+                <RowDefinition Height="39*"/>
+                <RowDefinition Height="36*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="62*"/>
+                <ColumnDefinition Width="75*"/>
+                <ColumnDefinition Width="67*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Margin="5" VerticalAlignment="Center" Text="识别级数:" />
+            <TextBlock Margin="5" x:Name="textBlockLatitude" Text="0" VerticalAlignment="Center" Grid.Column="1" />
+            <TextBlock Margin="5" Name="textBlockBright" Text="0" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+            <TextBlock Margin="5" Text="平均亮度：" VerticalAlignment="Center" Grid.Row="1" />
+            <TextBlock Margin="5" Text="级差阀值：" VerticalAlignment="Center" Grid.Row="2" />
+            <my:LynxUpDown Margin="5" Name="lynxUpDown1" VerticalAlignment="Center" IntValue="7" IntMin="1" Grid.Column="1" Grid.Row="2" />
+            <Button Content="默认阀值" Margin="5" Name="buttonDefault" VerticalAlignment="Center" Click="buttonDefault_Click" Grid.Column="2" Grid.Row="2" />
+            <TextBlock Margin="5" Text="SNR" VerticalAlignment="Center" Grid.Row="3" />
+            <TextBlock Margin="5" Name="SNR" Text="0" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" />
+            <Button Content="SNR" Margin="5" Name="buttonSNR" VerticalAlignment="Stretch" Click="buttonSNR_Click" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Stretch" />
+        </Grid>
+    </Grid>
+</UserControl>

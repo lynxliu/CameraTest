@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="SilverlightLynxControls.LynxObjectPanelItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="300" Width="120" PointerEntered="UserControl_PointerEntered" 
+             PointerExited="UserControl_PointerExited" 
+             SizeChanged="UserControl_SizeChanged" 
+             PointerReleased="UserControl_PointerPressed">
+    
+    <StackPanel x:Name="LayoutRoot" Background="White">
+        <Canvas Name="canvasTitle" Height="27" PointerPressed="Canvas_PointerPressed" Width="120">
+                <Image Name="ItemIcon" Source="/SilverlightLynxControls;component/Images/freemind.png" Height="25"></Image>
+            <TextBlock Name="ItemText" Canvas.Left="27" Width="90" TextAlignment="Center" Height="21" Text="Item" PointerPressed="ItemText_PointerPressed" Holding="ItemText_Holding" />
+            <TextBox Name="ItemTextEdit" Canvas.Left="27" Width="90" TextAlignment="Center" Height="21" Text="Item" Visibility="Collapsed" LostFocus="ItemTextEdit_LostFocus" />
+
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF63F87A" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </Canvas.Background>
+        </Canvas>
+
+        <StackPanel Height="273" Width="120" Name="stackContent" 
+                    PointerPressed="UserControl_PointerPressed" 
+                    PointerReleased="UserControl_PointerReleased" >
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFAFF513" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </StackPanel.Background>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

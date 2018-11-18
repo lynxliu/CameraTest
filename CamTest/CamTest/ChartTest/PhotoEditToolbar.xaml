@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="SLPhotoTest.ChartTest.PhotoEditToolbar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="35" Width="577">
+    
+    <StackPanel x:Name="LayoutRoot" Background="White" Orientation="Horizontal" Width="577" Height="35">
+        <Button  Height="35" HorizontalAlignment="Left" Margin="0,0,0,0" Name="buttonOpen" VerticalAlignment="Top" Width="35" ClickMode="Release" Click="buttonOpen_Click" ToolTipService.ToolTip="打开照片">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/SLPhotoTest;component/images/PhotoOpen.png" Stretch="Fill" Height="27"></Image>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button  Height="35" HorizontalAlignment="Left" Margin="0,0,0,0" Name="buttonSave" VerticalAlignment="Top" Width="35" ClickMode="Release" Click="buttonSave_Click" ToolTipService.ToolTip="保存当前照片">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/SLPhotoTest;component/images/PhotoSave.png" Stretch="Fill" Height="27"></Image>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button  Height="35" HorizontalAlignment="Left" Margin="0,0,0,0" Name="buttonDelete" VerticalAlignment="Top" Width="35" ClickMode="Release" Click="buttonDelete_Click" ToolTipService.ToolTip="删除当前选中照片">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/SLPhotoTest;component/images/ChartDelete.png" Stretch="Fill" Height="27"></Image>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Rectangle Width="2" Height="25" Fill="Blue" Margin="1,0"></Rectangle>
+
+        <Button  Height="35" HorizontalAlignment="Left" Margin="0,0,0,0" Name="buttonAutoTest" VerticalAlignment="Top" Width="35" ClickMode="Release" Click="buttonAutoTest_Click" ToolTipService.ToolTip="测试当前照片">
+            <Button.Content>
+                <StackPanel  Orientation="Horizontal">
+                    <Image Source="/SLPhotoTest;component/images/Test.png" Stretch="Fill" Height="27" Width="27"></Image>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button  Height="35" HorizontalAlignment="Left" Margin="0,0,0,0" Name="buttonAutoTestAll" VerticalAlignment="Top" Width="35" ClickMode="Release" Click="buttonAutoTestAll_Click" ToolTipService.ToolTip="测试全部照片">
+            <Button.Content>
+                <StackPanel  Orientation="Horizontal">
+                    <Image Source="/SLPhotoTest;component/images/TestAll.png" Stretch="Fill" Height="27" Width="27"></Image>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button  Height="35" Name="buttonSaveTest" HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Top" Width="35" ClickMode="Release" Click="buttonSaveTest_Click" ToolTipService.ToolTip="保存测试结果">
+            <Button.Content>
+                <StackPanel  Orientation="Horizontal">
+                    <Image Source="/SLPhotoTest;component/images/SaveResult.png"></Image>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Rectangle Width="2" Height="25" Fill="Blue" Margin="1,0"></Rectangle>
+        <Button Name="buttonZoomIn"  Height="35" HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Top" Width="35" ClickMode="Release" Click="buttonZoomIn_Click" ToolTipService.ToolTip="放大">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/SLPhotoTest;component/images/ZoomIn.png"></Image>
+
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Name="buttonZoomOut"  Height="35" HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Top" Width="35" ClickMode="Release" Click="buttonZoomOut_Click" ToolTipService.ToolTip="缩小">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/SLPhotoTest;component/images/ZoomOut.png"></Image>
+
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button Name="buttonMove"  Height="35" HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Top" Width="35" ClickMode="Release" Click="buttonMove_Click" ToolTipService.ToolTip="移动">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal" Name="stackMove">
+                    <Image Source="/SLPhotoTest;component/images/Move.png"></Image>
+                </StackPanel>
+            </Button.Content>
+        </Button >
+        <Button Name="buttonResume"  Height="35" HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Top" Width="35" ClickMode="Release" Click="buttonResume_Click"  ToolTipService.ToolTip="还原">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal" >
+                    <Image Source="/SLPhotoTest;component/images/Resume.png"></Image>
+                </StackPanel>
+            </Button.Content>
+        </Button >
+        <Rectangle Width="2" Height="25" Fill="Blue" Margin="1,0"></Rectangle>
+        <Button Name="buttonSelect"  Height="35" HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Top" Width="57" ClickMode="Release" Click="buttonSelect_Click" ToolTipService.ToolTip="在图像上绘制选区">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal" Name="stackSelectButton">
+                    <Image Source="/SLPhotoTest;component/images/Select.png"></Image>
+                    <TextBlock Text="选择" Height="14"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Rectangle Width="2" Height="25" Fill="Blue" Margin="1,0"></Rectangle>
+        <Button Name="buttonCrop"  Height="35" HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Top" Width="39" ClickMode="Release" ToolTipService.ToolTip="剪裁选区图像" Click="buttonCrop_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image Name="tempClip" Width="30" Height="30" Source="/SLPhotoTest;component/images/Crop.png"></Image>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Name="buttonCopy"  Height="35" HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Top" Width="39" ClickMode="Release" Click="buttonCopy_Click" ToolTipService.ToolTip="复制选区图像">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/SLPhotoTest;component/images/copy.png"></Image>
+
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Name="buttonPaste"  Height="35" HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Top" Width="39" ClickMode="Release" Click="buttonPaste_Click" ToolTipService.ToolTip="粘贴选区图像">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/SLPhotoTest;component/images/paste.png"></Image>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Height="35" Name="buttonPasteAll" Width="35" Click="buttonPasteAll_Click" ToolTipService.ToolTip="导入剪贴板全部照片">
+            <Image Source="/SLPhotoTest;component/images/LoadMultiPhoto.png"></Image>
+        </Button>
+    </StackPanel>
+</UserControl>

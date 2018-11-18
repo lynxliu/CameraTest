@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="SilverlightLynxControls.LynxDesktop"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="800" Height="600">
+
+    <Canvas x:Name="Desktop" Background="Black" PointerMoved="Desktop_PointerMoved">
+        <Canvas x:Name="DesktopOperation" Height="213" Width="53" Canvas.Left="8" Canvas.Top="235" Canvas.ZIndex="1">
+            <Button x:Name="MoveUp" Height="15" Width="15" Canvas.Left="17" Canvas.Top="8" Content="^" FontSize="9.333" FontWeight="Bold" FontFamily="Times New Roman" Click="MoveUp_Click"/>
+            <Button x:Name="MoveLeft" Height="15" Width="15" Canvas.Left="8" Canvas.Top="27" Content="&lt;" RenderTransformOrigin="-0.467,1.933" FontFamily="Times New Roman" FontWeight="Bold" FontSize="9.333" Click="MoveLeft_Click"/>
+            <Button x:Name="MoveRight" Height="15" Width="15" Canvas.Left="27" Canvas.Top="27" Content="&gt;" FontSize="9.333" Click="MoveRight_Click"/>
+            <Button x:Name="MoveDown" Height="15" Width="15" Canvas.Left="17" Canvas.Top="46" Content="v" FontSize="9.333" FontWeight="Bold" FontFamily="Times New Roman" Click="MoveDown_Click"/>
+            <Button x:Name="ZoomIn" Height="15" Width="15" Canvas.Left="8" Canvas.Top="81" Content="+" FontSize="8" FontWeight="Bold" Click="ZoomIn_Click"/>
+            <Button x:Name="ZoomOut" Height="15" Width="15" Canvas.Left="30" Canvas.Top="81" Content="--" FontSize="8" FontWeight="Bold" Click="ZoomOut_Click"/>
+            <Button x:Name="Clear" Height="15" Width="37" Canvas.Left="8" Canvas.Top="100" Content="Clear" FontSize="8" Click="Clear_Click"/>
+            <Button x:Name="Help" Height="15" Width="37" Canvas.Left="8" Canvas.Top="138" Content="Help" FontSize="8" FontWeight="Bold"/>
+            <TextBlock Canvas.Left="2" Canvas.Top="159" Height="22" Name="xp" Text="0" Width="45" Foreground="#FFF8ECEC" />
+            <TextBlock Canvas.Left="2" Canvas.Top="185" Height="22" Name="yp" Text="0" Width="45" Foreground="#FFFFFCFC" />
+
+        </Canvas>
+        <StackPanel Height="46" Width="315" Canvas.Left="228" Canvas.Top="8" Orientation="Horizontal" Canvas.ZIndex="1">
+            <TextBlock Margin="0,8" Width="58" Text="课程" TextWrapping="Wrap" Foreground="#FFFAF8F8" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,8" VerticalAlignment="Center" Width="58" Foreground="#FFFAF8F8" Text="组织" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,8" VerticalAlignment="Center" Width="58" Foreground="#FFFAF8F8" Text="教学" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,8" VerticalAlignment="Center" Width="58" Foreground="#FFFAF8F8" Text="作品" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,8" VerticalAlignment="Center" Width="58" Foreground="#FFFAF8F8" Text="人员" TextAlignment="Center" TextWrapping="Wrap"/>
+        </StackPanel>
+        <Image Height="46" Width="53" Canvas.Left="8" Canvas.Top="8" />
+        <Canvas Canvas.Left="0" Canvas.Top="0" x:Name="Client" Canvas.ZIndex="0">
+            <Button Canvas.Left="6" Canvas.Top="454" Content="Test" Height="26" Name="buttonTest" Width="66" Click="buttonTest_Click" />
+        </Canvas>
+    </Canvas>
+</UserControl>

@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="SLPhotoTest.PhotoTestMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="435" Width="210">
+    <StackPanel x:Name="LayoutRoot" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button Height="35" Name="buttonISO2233" Width="210" Click="buttonISO2233_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Width="200">
+                    <Image Source="/SLPhotoTest;component/images/ISO12233.png" Width="41"></Image>
+                    <TextBlock Text="   ISO12233卡" FontSize="18" Height="33"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Height="35" Name="buttonISO2233Ex" Width="210" Click="buttonISO2233Ex_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal"  Width="200">
+                    <Image Source="/SLPhotoTest;component/images/ISO12233Ex.png"></Image>
+                    <TextBlock Text="  超级ISO12233卡" FontSize="18" Height="33"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Height="35" Name="buttonXRite" Width="210" HorizontalAlignment="Center" Click="buttonXRite_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal"  Width="200">
+                    <Image Source="/SLPhotoTest;component/images/XRiteChart.png" HorizontalAlignment="Left"   VerticalAlignment="Center" Margin="0,0,0,0"></Image>
+                    <TextBlock Text="   XRite色标卡" FontSize="18" Height="33"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Height="35" Name="buttonGrayChart" Width="210" HorizontalAlignment="Center" Click="buttonGrayChart_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal"  Width="200">
+                    <Image Source="/SLPhotoTest;component/images/GrayChart.png" HorizontalAlignment="Left"   VerticalAlignment="Center" Margin="0,0,0,0" Width="39"></Image>
+                    <TextBlock Text="   灰度卡" FontSize="18" Height="33"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Height="35" Name="buttonITEGray" Width="210" Click="buttonITEGray_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Width="200">
+                    <Image Source="/SLPhotoTest;component/images/ITEGrayScaleChart.png" Width="41"></Image>
+                    <TextBlock Text="   ITE灰阶卡" FontSize="18" Height="33"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Height="35" Name="buttonKDGrayChart" Width="210" HorizontalAlignment="Center" Click="buttonKDGrayChart_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal"  Width="200">
+                    <Image Source="/SLPhotoTest;component/images/KDGray.png" HorizontalAlignment="Left"   VerticalAlignment="Center" Margin="0,0,0,0"></Image>
+                    <TextBlock Text="   柯达灰度卡" FontSize="18" Height="33"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Height="35" Name="buttonAberrationChart" Width="210" HorizontalAlignment="Center" Click="buttonAberrationChart_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal"  Width="200">
+                    <Image Source="/SLPhotoTest;component/images/AberrationChart.png" HorizontalAlignment="Left"   VerticalAlignment="Center" Margin="0,0,0,0" Width="38"></Image>
+                    <TextBlock Text="   畸变卡" FontSize="18" Height="33"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Height="35" Name="buttonXMarkChart" Width="210" HorizontalAlignment="Center" Click="buttonXMarkChart_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal"  Width="200">
+                    <Image Source="/SLPhotoTest;component/images/XMarkChart.png" HorizontalAlignment="Left"   VerticalAlignment="Center" Margin="0,0,0,0"></Image>
+                    <TextBlock Text="   XMark卡" FontSize="18" Height="33"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button Height="7"></Button>
+        <Button Height="35" Name="buttonFace" Width="210" HorizontalAlignment="Center" Click="buttonFace_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal"  Width="200">
+                    <Image Source="/SLPhotoTest;component/images/FaceTest.png" HorizontalAlignment="Left"   VerticalAlignment="Center" Margin="0,0,0,0"></Image>
+                    <TextBlock Text="    人脸识别" FontSize="18" Height="33"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Height="35" Name="buttonShutterSpeed" Width="210" HorizontalAlignment="Center" Click="buttonShutterSpeed_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal"  Width="200">
+                    <Image Source="/SLPhotoTest;component/images/Speed.png" HorizontalAlignment="Left"   VerticalAlignment="Center" Margin="0,0,0,0"></Image>
+                    <TextBlock Text="    快门延迟" FontSize="18" Height="33"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Height="35" Name="buttonBadPix" Width="210" HorizontalAlignment="Center" Click="buttonBadPix_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal"  Width="200">
+                    <Image Source="/SLPhotoTest;component/PhotoTest/Images/Parameter/BadPix.png" HorizontalAlignment="Left"   VerticalAlignment="Center" Margin="0,0,0,0"></Image>
+                    <TextBlock Text="    坏点测试" FontSize="18" Height="33"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Height="7"></Button>
+        <Button Height="35" Name="buttonTimer" Width="210" HorizontalAlignment="Center" Click="buttonTimer_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal"  Width="200">
+                    <Image Source="/SLPhotoTest;component/images/clock.png" HorizontalAlignment="Left"   VerticalAlignment="Center" Margin="0,0,0,0"></Image>
+                    <TextBlock Text="    秒表" FontSize="18" Height="33"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+    </StackPanel>
+</UserControl>

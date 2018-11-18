@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="SLPhotoTest.ChartTest.JBEVTest"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Width="600" Height="400" xmlns:my="using:SLPhotoTest" 
+             xmlns:my1="using:SLPhotoTest.ChartTest" 
+             xmlns:my2="using:SLPhotoTest.PhotoInfor" 
+             xmlns:my3="using:SLPhotoTest.UIControl"
+             PointerPressed="UserControl_PointerPressed" 
+             xmlns:my4="using:SilverlightLynxControls">
+    <Grid x:Name="LayoutRoot" Height="385">
+        <Image ToolTipService.ToolTip="测试照片列表" Margin="-5,70,579,288" Name="imageMulti" Source="/SLPhotoTest;component/images/MorePhoto.png" Stretch="Fill" Canvas.ZIndex="7" PointerPressed="imageMulti_PointerPressed" />
+        <ProgressBar Margin="0,369,0,4" Name="processbar" Width="574" Value="0" Foreground="Blue" Background="Yellow" Canvas.ZIndex="10"/>
+        <Rectangle Height="385" HorizontalAlignment="Left" VerticalAlignment="Top" Width="600" RadiusX="7" RadiusY="7" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFCDD0CF" Offset="1"/>
+                    <GradientStop Color="White" Offset="0.793"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Canvas Canvas.ZIndex="20" x:Name="Title" Height="25" VerticalAlignment="Top"  Margin="5,5,5,0" Background="Azure">
+            <Image Name="Icon" Source="/SLPhotoTest;component/images/01.png" Height="50" Canvas.Left="-25" Canvas.Top="-25" Width="50"></Image>
+            <TextBlock Width="131" TextWrapping="Wrap" Canvas.Left="31" Height="25" FontSize="20" Canvas.Top="0" FontFamily="Trebuchet MS"><Run Text="曝光误差测试"/></TextBlock>
+            <Button Width="25" Height="25" Click="buttonParameterSave_Click" Canvas.Left="510" Canvas.Top="0" ToolTipService.ToolTip="保存结果到项目">
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/images/format-text-direction-rtl.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button Width="25" Height="25" Click="buttonToIcon_Click" Canvas.Left="535" Canvas.Top="0" ToolTipService.ToolTip="隐藏">
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/Images/min.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button Width="25" Height="25" Click="buttonClose_Click" Canvas.Left="560" Canvas.Top="0" ToolTipService.ToolTip="关闭">
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/Images/close.png"></Image>
+                </Button.Content>
+            </Button>
+            <my2:PhotoInforToolbar Height="37" x:Name="photoInforTool1" Width="261" Canvas.Left="251" Canvas.Top="-12" />
+        </Canvas>
+        <my1:PhotoEditToolbar HorizontalAlignment="Left" Margin="5,35,0,0" x:Name="photoEditToolbar" VerticalAlignment="Top" Canvas.ZIndex="10"/>
+        <Grid Height="290" HorizontalAlignment="Left" Margin="419,77,0,0" Name="grid1" VerticalAlignment="Top" Width="171">
+            <Button Content="计算" Height="23" HorizontalAlignment="Left" Margin="96,168,0,0" Name="buttonTest" VerticalAlignment="Top" Width="67" Click="buttonTest_Click" Background="#FF10FC47" Foreground="Blue">
+                <Button.BorderBrush>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#FFA3AEB9" Offset="0" />
+                        <GradientStop Color="#FF8399A9" Offset="0.375" />
+                        <GradientStop Color="#FF718597" Offset="0.375" />
+                        <GradientStop Color="#FF1B90E8" Offset="1" />
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+            </Button>
+            <TextBlock Height="19" HorizontalAlignment="Left" Margin="7,78,0,0" Name="textBlock4" Text="伽玛：" VerticalAlignment="Top" Width="37" />
+            <Button ToolTipService.ToolTip="测试选择的区域" Content="区域显示" Height="22" HorizontalAlignment="Left" Margin="7,169,0,0" Name="buttonShowArea" VerticalAlignment="Top" Width="67" Click="buttonShowArea_Click" />
+            <my4:LynxUpDown Height="25" HorizontalAlignment="Left" Margin="50,79,0,0" Name="lynxUpDownGamma" VerticalAlignment="Top" Width="79" DataMode="DoubleMode" DoubleValue="1" />
+            <TextBlock Height="19" HorizontalAlignment="Left" Margin="7,117,0,0" Name="textBlock1" Text="参数：" VerticalAlignment="Top" Width="37" />
+            <my4:LynxUpDown Height="25" HorizontalAlignment="Left" Margin="50,118,0,0" Name="lynxUpDownP" VerticalAlignment="Top" Width="79" DataMode="DoubleMode" DoubleValue="3.322" FloatNum="4" />
+        </Grid>
+        <my:LChartPhoto Height="290" HorizontalAlignment="Left" Margin="5,77,0,0" x:Name="lChartPhoto1" VerticalAlignment="Top" Width="400" Canvas.ZIndex="5"/>
+        <my3:LPhotoList  Margin="13,85,0,0" x:Name="lPhotoList1" Canvas.ZIndex="6" Visibility="Collapsed" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Grid Height="68" HorizontalAlignment="Left" Margin="421,77,0,0" Name="gridGB" VerticalAlignment="Top" Width="167" Background="Yellow">
+            <TextBlock Height="19" HorizontalAlignment="Left" Margin="6,6,0,0" Text="中央明度：" VerticalAlignment="Top" Width="67" />
+            <TextBlock Height="20" HorizontalAlignment="Left" Margin="79,6,0,0" Name="TextCenterL" Text="0" VerticalAlignment="Top" Width="80" />
+            <TextBlock Height="19" HorizontalAlignment="Left" Margin="6,32,0,0" Name="textBlock3" Text="曝光量误差：" VerticalAlignment="Top" Width="67" />
+            <TextBlock Height="21" HorizontalAlignment="Left" Margin="79,30,0,0" Name="textBlockDE" Text="0" VerticalAlignment="Top" Width="80" FontSize="12" FontWeight="Bold" />
+        </Grid>
+    </Grid>
+</UserControl>

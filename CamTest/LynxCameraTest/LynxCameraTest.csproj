@@ -1,0 +1,485 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{971CBA79-487E-4E9E-9C16-FB4DABE0EE8D}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LynxCameraTest</RootNamespace>
+    <AssemblyName>LynxCameraTest</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>LynxCameraTest_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <ProjectReference Include="..\..\DCTestLibrary\DCTestLibrary.csproj">
+      <Project>{8317e0c7-148a-40ba-9b68-1e48641c0379}</Project>
+      <Name>DCTestLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LFC\LFC.csproj">
+      <Project>{50714eaa-f625-461d-aa5d-d1fc3b6303e8}</Project>
+      <Name>LFC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LynxControlClass\LynxControls.csproj">
+      <Project>{d3384950-c0e2-4569-b8a1-caf39a88635f}</Project>
+      <Name>LynxControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChartTestPage.xaml.cs">
+      <DependentUpon>ChartTestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonPage.xaml.cs">
+      <DependentUpon>CommonPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonToolPage.xaml.cs">
+      <DependentUpon>CommonToolPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\BindableBase.cs" />
+    <Compile Include="Common\BooleanNegationConverter.cs" />
+    <Compile Include="Common\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Common\ChartTestHelper.cs" />
+    <Compile Include="Common\LayoutAwarePage.cs" />
+    <Compile Include="Common\LynxControl.cs" />
+    <Compile Include="Common\RichTextColumns.cs" />
+    <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ChartTestItem.cs" />
+    <Compile Include="Model\CommonHelper.cs" />
+    <Compile Include="Model\IParameterTestView.cs" />
+    <Compile Include="Model\IPhotoTestWindow.cs" />
+    <Compile Include="Model\Result.cs" />
+    <Compile Include="Model\TestGroup.cs" />
+    <Compile Include="Model\TestItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\CommonToolViewModel.cs" />
+    <Compile Include="ViewModel\LynxChartTestViewModel.cs" />
+    <Compile Include="ViewModel\ChartTestViewModel\AberrationChartTestViewModel.cs" />
+    <Compile Include="ViewModel\ChartTestViewModel\GrayChartTestViewModel.cs" />
+    <Compile Include="ViewModel\ChartTestViewModel\ISO12233ExTestViewModel.cs" />
+    <Compile Include="ViewModel\ChartTestViewModel\ISO12233TestViewModel.cs" />
+    <Compile Include="ViewModel\ChartTestViewModel\ITEGrayscaleChartTestViewModel.cs" />
+    <Compile Include="ViewModel\ChartTestViewModel\JBAberrationTestViewModel.cs" />
+    <Compile Include="ViewModel\ChartTestViewModel\JBEVTestViewModel.cs" />
+    <Compile Include="ViewModel\ChartTestViewModel\KDGrayChartTestViewModel.cs" />
+    <Compile Include="ViewModel\ChartTestViewModel\XMarkChartTestViewModel.cs" />
+    <Compile Include="ViewModel\ChartTestViewModel\XRiteChartTestViewModel.cs" />
+    <Compile Include="ViewModel\CommonChartTestViewModel.cs" />
+    <Compile Include="ViewModel\MainPageViewModel.cs" />
+    <Compile Include="ViewModel\PageNaigatorViewModel.cs" />
+    <Compile Include="View\ChartTestToolBar.xaml.cs">
+      <DependentUpon>ChartTestToolBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChartTest\AberrationChartTest.xaml.cs">
+      <DependentUpon>AberrationChartTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChartTest\ChartCorrect.xaml.cs">
+      <DependentUpon>ChartCorrect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChartTest\GrayChartTest.xaml.cs">
+      <DependentUpon>GrayChartTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChartTest\ISO12233ExTest.xaml.cs">
+      <DependentUpon>ISO12233ExTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChartTest\ISO12233Test.xaml.cs">
+      <DependentUpon>ISO12233Test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChartTest\ITEGrayscaleChartTest.xaml.cs">
+      <DependentUpon>ITEGrayscaleChartTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChartTest\JBAberrationTest.xaml.cs">
+      <DependentUpon>JBAberrationTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChartTest\JBEVTest.xaml.cs">
+      <DependentUpon>JBEVTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChartTest\KDGrayChartTest.xaml.cs">
+      <DependentUpon>KDGrayChartTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChartTest\XMarkTest.xaml.cs">
+      <DependentUpon>XMarkTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChartTest\XRiteTest.xaml.cs">
+      <DependentUpon>XRiteTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChartView.xaml.cs">
+      <DependentUpon>ChartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChartViewToolBar.xaml.cs">
+      <DependentUpon>ChartViewToolBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CommonToolBar.xaml.cs">
+      <DependentUpon>CommonToolBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChartTestControl.xaml.cs">
+      <DependentUpon>ChartTestControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainControl.xaml.cs">
+      <DependentUpon>MainControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainToolBar.xaml.cs">
+      <DependentUpon>MainToolBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ParameterTest\Aberration.xaml.cs">
+      <DependentUpon>Aberration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tools\BadPixTest.xaml.cs">
+      <DependentUpon>BadPixTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ParameterTest\BrightDistance.xaml.cs">
+      <DependentUpon>BrightDistance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ParameterTest\ColorTrend.xaml.cs">
+      <DependentUpon>ColorTrend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ParameterTest\Dispersiveness.xaml.cs">
+      <DependentUpon>Dispersiveness.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ParameterTest\Latitude.xaml.cs">
+      <DependentUpon>Latitude.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ParameterTest\Noise.xaml.cs">
+      <DependentUpon>Noise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ParameterTest\PurplePercent.xaml.cs">
+      <DependentUpon>PurplePercent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ParameterTest\RayleiResolution.xaml.cs">
+      <DependentUpon>RayleiResolution.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ParameterTest\SFRResolution.xaml.cs">
+      <DependentUpon>SFRResolution.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ParameterTest\Wave.xaml.cs">
+      <DependentUpon>Wave.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ParameterTest\WhiteBanlance.xaml.cs">
+      <DependentUpon>WhiteBanlance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tools\ShutterSpeed.xaml.cs">
+      <DependentUpon>ShutterSpeed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tools\SysTimer.xaml.cs">
+      <DependentUpon>SysTimer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewNavigatorBar.xaml.cs">
+      <DependentUpon>ViewNavigatorBar.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="LynxCameraTest_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\ChartTest\AimChart.png" />
+    <Content Include="Assets\ChartTest\SelectChart.png" />
+    <Content Include="Assets\ChartTest\SourceChart.png" />
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\Navigator\AberrationChart.png" />
+    <Content Include="Assets\Navigator\BadPixel.png" />
+    <Content Include="Assets\Navigator\ChartTest.png" />
+    <Content Include="Assets\Navigator\Clock.png" />
+    <Content Include="Assets\Navigator\CurrentTime.png" />
+    <Content Include="Assets\Navigator\GrayChart.png" />
+    <Content Include="Assets\Navigator\ISO12233.png" />
+    <Content Include="Assets\Navigator\ISO12233Ex.png" />
+    <Content Include="Assets\Navigator\ITEGrayScaleChart.png" />
+    <Content Include="Assets\Navigator\KDGray.png" />
+    <Content Include="Assets\Navigator\ShotSpeed.png" />
+    <Content Include="Assets\Navigator\XMarkChart.png" />
+    <Content Include="Assets\Navigator\XRiteChart.png" />
+    <Content Include="Assets\Parameter\Aberration.png" />
+    <Content Include="Assets\ShotSpeed.png" />
+    <Content Include="Assets\Tools\BadPix.png" />
+    <Content Include="Assets\Parameter\BrightChanges.png" />
+    <Content Include="Assets\Parameter\Dispersiveness.png" />
+    <Content Include="Assets\Parameter\EdgeResov.png" />
+    <Content Include="Assets\Parameter\Noise.png" />
+    <Content Include="Assets\Parameter\PPPercent.png" />
+    <Content Include="Assets\Parameter\TestColor.png" />
+    <Content Include="Assets\Parameter\TestLatitude.png" />
+    <Content Include="Assets\Parameter\TestResov.png" />
+    <Content Include="Assets\Parameter\WaveQ.png" />
+    <Content Include="Assets\Parameter\WhiteBalance.png" />
+    <Content Include="Assets\SmallLogo.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\ToolBar\Add.png" />
+    <Content Include="Assets\ToolBar\Close.png" />
+    <Content Include="Assets\ToolBar\Remove.png" />
+    <Content Include="Assets\ToolBar\Test.png" />
+    <Content Include="Assets\ToolBar\TestAll.png" />
+    <Content Include="Assets\Tools\clock.png" />
+    <Content Include="Assets\Tools\CurrentTime.png" />
+    <Content Include="Common\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="ChartTestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonToolPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ChartTestToolBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ChartTest\AberrationChartTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ChartTest\ChartCorrect.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ChartTest\GrayChartTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ChartTest\ISO12233ExTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ChartTest\ISO12233Test.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ChartTest\ITEGrayscaleChartTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ChartTest\JBAberrationTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ChartTest\JBEVTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ChartTest\KDGrayChartTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ChartTest\XMarkTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ChartTest\XRiteTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ChartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ChartViewToolBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CommonToolBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ChartTestControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainToolBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ParameterTest\Aberration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Tools\BadPixTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ParameterTest\BrightDistance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ParameterTest\ColorTrend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ParameterTest\Dispersiveness.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ParameterTest\Latitude.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ParameterTest\Noise.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ParameterTest\PurplePercent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ParameterTest\RayleiResolution.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ParameterTest\SFRResolution.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ParameterTest\Wave.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ParameterTest\WhiteBanlance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Tools\ShutterSpeed.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Tools\SysTimer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ViewNavigatorBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModel\ParameterTestViewModel\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="SLPhotoTest.PhotoInfor.PhotoInforToolbar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="37" Width="255">
+    
+    <StackPanel x:Name="LayoutRoot" Background="White" Orientation="Horizontal" Width="255">
+        <Button Height="35" Name="buttonCopy" Width="35" Click="buttonCopy_Click" ToolTipService.ToolTip="复制图像到剪贴板">
+            <Image Width="30" Height="30" Source="/SLPhotoTest;component/PhotoInfor/Images/copy.png"></Image>
+        </Button>
+        <Button Height="35" Name="buttonPaste" Width="35" Click="buttonPaste_Click" ToolTipService.ToolTip="从剪贴板粘贴图像">
+            <Image Width="30" Height="30" Source="/SLPhotoTest;component/PhotoInfor/Images/paste.png"></Image>
+        </Button>
+        <Rectangle Width="2" Height="25" Fill="Blue" Margin="1,0"></Rectangle>
+        <Button Height="35" Name="buttonFit" Width="35" Click="buttonFit_Click" ToolTipService.ToolTip="调整图像尺寸">
+            <Image Width="30" Height="30" Source="/SLPhotoTest;component/PhotoInfor/Images/transform-scale-2.png"></Image>
+        </Button>
+        <Button Height="35" Name="buttonRGBEdit" Width="35" Click="buttonColorEdit_Click" ToolTipService.ToolTip="调整图像颜色">
+            <Image Width="30" Height="30" Source="/SLPhotoTest;component/PhotoInfor/Images/RGBEdit.png"></Image>
+        </Button>
+        <Rectangle Width="2" Height="25" Fill="Blue" Margin="1,0"></Rectangle>
+        <Button Height="35" Name="buttonPhotoInfor" Width="35" Click="buttonPhotoInfor_Click" ToolTipService.ToolTip="查看图像基本信息">
+            <Image Width="30" Height="30" Source="/SLPhotoTest;component/PhotoInfor/Images/PhotoInfor.png"></Image>
+        </Button>
+        <Button Height="35" Name="buttonBrightInfor" Width="35" Click="buttonBrightInfor_Click" ToolTipService.ToolTip="查看图像亮度信息">
+            <Image Width="30" Height="30" Source="/SLPhotoTest;component/PhotoInfor/Images/view-object-histogram-logarithmic.png"></Image>
+        </Button>
+        <Button Height="35" Name="buttonColorInfor" Width="35" Click="buttonColorInfor_Click" ToolTipService.ToolTip="查看图像颜色信息">
+            <Image Width="30" Height="30" Source="/SLPhotoTest;component/PhotoInfor/Images/ColorInfor.png"></Image>
+        </Button>
+    </StackPanel>
+</UserControl>

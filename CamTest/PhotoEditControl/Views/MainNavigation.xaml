@@ -1,0 +1,84 @@
+﻿<UserControl
+    x:Class="PhotoTestControl.Views.MainNavigation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhotoTestControl.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="155"
+    d:DesignWidth="400">
+    
+    <StackPanel Orientation="Horizontal">
+        <!--<Button Content="Chart Show"></Button>
+        <StackPanel ScrollViewer.HorizontalScrollBarVisibility="Auto" Orientation="Horizontal" Name="ChartPanel">
+            <Button Command="{Binding ShowChart}" CommandParameter="ISO12233" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/ISO12233.png" />
+            </Button>
+            <Button  Command="{Binding ShowChart}" CommandParameter="ISO12233Ex" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/ISO12233Ex.png" />
+            </Button>
+            <Button  Command="{Binding ShowChart}" CommandParameter="XRite" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/XRiteChart.png" />
+            </Button>
+            <Button Command="{Binding ShowChart}" CommandParameter="Aberration" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/AberrationChart.png" />
+            </Button>
+            <Button Command="{Binding ShowChart}" CommandParameter="Gray" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/GrayChart.png" />
+            </Button>
+            <Button Command="{Binding ShowChart}" CommandParameter="ITEGray" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/ITEGrayScaleChart.png" />
+            </Button>
+            <Button Command="{Binding ShowChart}" CommandParameter="KDGray" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/KDGray.png" />
+            </Button>
+            <Button Command="{Binding ShowChart}" CommandParameter="XMark" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/XMarkChart.png" />
+            </Button>
+        </StackPanel>
+        <Button Content="Chart Test"></Button>-->
+        <StackPanel Orientation="Horizontal" Name="TestPanel">
+            <Button Command="{Binding TestChart}" CommandParameter="ISO12233" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/ISO12233.png" />
+            </Button>
+            <Button  Command="{Binding TestChart}" CommandParameter="ISO12233Ex" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/ISO12233Ex.png" />
+            </Button>
+            <Button  Command="{Binding TestChart}" CommandParameter="XRite" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/XRiteChart.png" />
+            </Button>
+            <Button Command="{Binding TestChart}" CommandParameter="Aberration" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/AberrationChart.png" />
+            </Button>
+            <Button Command="{Binding TestChart}" CommandParameter="Gray" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/GrayChart.png" />
+            </Button>
+            <Button Command="{Binding TestChart}" CommandParameter="ITEGray" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/ITEGrayScaleChart.png" />
+            </Button>
+            <Button Command="{Binding TestChart}" CommandParameter="KDGray" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/KDGray.png" />
+            </Button>
+            <Button Command="{Binding TestChart}" CommandParameter="XMark" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/XMarkChart.png" />
+            </Button>
+
+        </StackPanel>
+        <!--<Button Content="Miscellaneous"></Button>-->
+        <StackPanel Orientation="Horizontal" Name="MiscellaneousPanel">
+            <Button Command="{Binding Clock}" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/Clock.png" />
+            </Button>
+            <Button Command="{Binding Speed}" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/CurrentTime.png" />
+            </Button>
+            <Button Command="{Binding ShutterDelay}" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/ShotSpeed.png" />
+            </Button>
+            <Button Command="{Binding BadPixel}" Margin="5">
+                <Image Source="ms-appx:///PhotoEditControl/Images/BadPixel.png" />
+            </Button>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

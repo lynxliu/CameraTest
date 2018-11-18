@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="SLPhotoTest.PhotoEdit.PhotoView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="100" d:DesignWidth="200" 
+             xmlns:my="using:SilverlightLynxControls">
+    
+    <Grid x:Name="LayoutRoot" Background="White" Height="100" Width="200">
+        <Button Content="^" Height="30" Width="30" HorizontalAlignment="Left" Margin="41,3,0,0" Name="UpStep" VerticalAlignment="Top" Click="UpStep_Click" />
+        <Button Content="&lt;" Height="30" HorizontalAlignment="Left" Margin="9,35,0,0" Name="LeftStep" VerticalAlignment="Top" Width="30" Click="LeftStep_Click" />
+        <Button Content="V" Height="30" HorizontalAlignment="Left" Margin="41,68,0,0" Name="DownStep" VerticalAlignment="Top" Width="30" Click="DownStep_Click" />
+        <Button Content=">" Height="30" HorizontalAlignment="Left" Margin="73,35,0,0" Name="RightStep" VerticalAlignment="Top" Width="30" Click="RightStep_Click" />
+        <Button Content="O" Height="30" HorizontalAlignment="Right" Margin="0,35,129,0" Name="Center" VerticalAlignment="Top" Width="30" Click="Center_Click" />
+        <Button Content="+" Height="30" HorizontalAlignment="Left" Margin="170,35,0,0" Name="buttonZoomIn" VerticalAlignment="Top" Width="30" Click="buttonZoomIn_Click" />
+        <Button Content="X" Height="25" HorizontalAlignment="Right" Name="buttonClose" VerticalAlignment="Top" Width="22" Click="buttonClose_Click" />
+        <Button Content="--" Height="30" HorizontalAlignment="Left" Margin="135,35,0,0" Name="buttonZoom" VerticalAlignment="Top" Width="30" Click="buttonZoom_Click" />
+        <Button Content="Auto" Height="30" HorizontalAlignment="Left" Margin="0,70,0,0" Name="buttonAuto" VerticalAlignment="Top" Width="39" Click="buttonAuto_Click" />
+        <Image Height="30" HorizontalAlignment="Left" Margin="-8,-6,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="30" />
+        <my:LynxUpDown Height="27" HorizontalAlignment="Left" Margin="82,4,0,0" Name="textBoxMovePix" VerticalAlignment="Top" Width="72" DataMode="LongMode" IntStep="1" IntMin="0" IntValue="0"/>
+        <my:LynxUpDown Height="30" HorizontalAlignment="Left" Margin="134,68,0,0" Name="textBoxZoom" VerticalAlignment="Top" Width="68" DataMode="DoubleMode" DoubleMax="1" DoubleStep="0.1" DoubleValue="0.1" />
+    </Grid>
+</UserControl>

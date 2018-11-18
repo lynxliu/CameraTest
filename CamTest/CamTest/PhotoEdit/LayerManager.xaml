@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="SLPhotoTest.PhotoEdit.LayerManager"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="100" Width="150" Height="300">
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid Name="title" Background="Beige" Height="20" Margin="0,0,0,0"  VerticalAlignment="Top">
+            <Button Content="R" Height="20" HorizontalAlignment="Left" Margin="60,0,0,0" Name="buttonRefreshLayer" VerticalAlignment="Top" Width="20" Click="buttonRefreshLayer_Click" />
+            <Button Content="N" Height="20" HorizontalAlignment="Left" Margin="80,0,0,0" Name="buttonNewLayer" VerticalAlignment="Top" Width="20" Click="buttonNewLayer_Click" />
+            <Button Content="D" Height="20" HorizontalAlignment="Left" Margin="100,0,0,0" Name="buttonDeleteLayer" VerticalAlignment="Top" Width="20" Click="buttonDeleteLayer_Click" />
+            <Button Content="X" Height="20" HorizontalAlignment="Left" Margin="130,0,0,0" Name="buttonClose" VerticalAlignment="Top" Width="20" Click="buttonClose_Click" />
+
+        </Grid>
+        <StackPanel Height="280" HorizontalAlignment="Left" Margin="0,20,0,0" Name="stackLayer" VerticalAlignment="Top" Width="150" PointerPressed="stackLayer_PointerPressed" PointerReleased="stackLayer_PointerReleased">
+            <Button Content="Button" Height="23" Name="button2" Width="75" />
+        </StackPanel>
+    </Grid>
+</UserControl>

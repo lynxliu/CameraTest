@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="SilverlightLynxControls.LynxTimeLine"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="42" Width="500" >
+    <Canvas Height="42" HorizontalAlignment="Left" Name="LTLFrameWork" VerticalAlignment="Top" Width="500" Background="AliceBlue">
+        <Canvas Name="canvasTitle" Width="500" Height="21" Background="#FFBBF8F5">
+            <TextBlock Canvas.Left="134" Canvas.Top="0" Height="17" Name="textBeginTime" Text="BeginTime" Width="130" TextAlignment="Center" FontStretch="Normal" />
+            <TextBlock Canvas.Left="341" Canvas.Top="0" Height="17" Name="textEndTime" Text="SelectTime" Width="157" TextAlignment="Center" FontStretch="Normal" />
+            <Button Canvas.Left="270" Canvas.Top="-5" Content="-" Height="21" Name="buttonMin" Width="20" FontSize="12" Click="buttonMin_Click" />
+            <Button Canvas.Left="291" Canvas.Top="-5" Content="+" Height="21" Name="buttonMax" Width="20" FontSize="12" Click="buttonMax_Click" />
+            <Button Canvas.Left="315" Canvas.Top="-5" Content="v" Height="21" Name="buttonSelect" Width="20" FontSize="12" Click="buttonSelect_Click" />
+            <TextBox Canvas.Left="0" Canvas.Top="0" Height="21" Name="textBoxCurrentSelect" Width="109" Text="selectTime" Background="#FFF5F552" />
+            <Button Canvas.Left="112" Canvas.Top="-5" Content=">" Height="21" Name="buttonGo" Width="16" Click="buttonGo_Click" />
+        </Canvas>
+        <Canvas Height="21" Name="canvasViewWindow" Width="500" Canvas.Left="0" Canvas.Top="21" >
+            <Canvas Height="21" Name="canvasTimeLine" Width="500" 
+                    PointerPressed="canvasTimeLine_PointerPressed" 
+                    PointerReleased="canvasTimeLine_PointerReleased" 
+                    PointerMoved="canvasTimeLine_PointerMoved">
+                <Canvas.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF3C8D1F" Offset="0" />
+                        <GradientStop Color="#FF449121" Offset="1" />
+                        <GradientStop Color="#FFF8F849" Offset="0.5" />
+                    </LinearGradientBrush>
+                </Canvas.Background>
+            </Canvas>
+        </Canvas>
+    </Canvas>
+
+</UserControl>

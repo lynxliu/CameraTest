@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="SLPhotoTest.ChartTest.JBAberrationTest"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Width="600" Height="400" xmlns:my="clr-namespace:SLPhotoTest" xmlns:my1="clr-namespace:SLPhotoTest.ChartTest" xmlns:my2="clr-namespace:SLPhotoTest.PhotoInfor" xmlns:my3="clr-namespace:SLPhotoTest.UIControl"
+             PointerPressed="UserControl_PointerPressed" >
+    <Grid x:Name="LayoutRoot" Height="385">
+        <Image ToolTipService.ToolTip="测试照片列表" Margin="-5,70,579,288" Name="imageMulti" Source="/SLPhotoTest;component/images/MorePhoto.png" Stretch="Fill" Canvas.ZIndex="7" PointerPressed="imageMulti_PointerPressed"  />
+        <ProgressBar Margin="0,369,0,4" Name="processbar" Width="574" Value="0" Foreground="Blue" Background="Yellow" Canvas.ZIndex="10"/>
+        <Rectangle Height="385" HorizontalAlignment="Left" VerticalAlignment="Top" Width="600" RadiusX="7" RadiusY="7" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFCDD0CF" Offset="1"/>
+                    <GradientStop Color="White" Offset="0.793"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Canvas Canvas.ZIndex="20" x:Name="Title" Height="25" VerticalAlignment="Top"  Margin="5,5,5,0" Background="Azure">
+            <Image Name="Icon" Source="/SLPhotoTest;component/images/01.png" Height="50" Canvas.Left="-25" Canvas.Top="-25" Width="50"></Image>
+            <TextBlock Width="131" TextWrapping="Wrap" Canvas.Left="31" Height="25" FontSize="20" Canvas.Top="0" FontFamily="Trebuchet MS"><Run Text="畸变测试"/></TextBlock>
+            <Button Width="25" Height="25" Click="buttonParameterSave_Click" Canvas.Left="510" Canvas.Top="0" ToolTipService.ToolTip="保存结果到项目">
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/images/format-text-direction-rtl.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button Width="25" Height="25" Click="buttonToIcon_Click" Canvas.Left="535" Canvas.Top="0" ToolTipService.ToolTip="隐藏">
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/Images/min.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button Width="25" Height="25" Click="buttonClose_Click" Canvas.Left="560" Canvas.Top="0" ToolTipService.ToolTip="关闭">
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/Images/close.png"></Image>
+                </Button.Content>
+            </Button>
+            <my2:PhotoInforToolbar Height="37" x:Name="photoInforTool1" Width="261" Canvas.Left="251" Canvas.Top="-12" />
+        </Canvas>
+        <my1:PhotoEditToolbar HorizontalAlignment="Left" Margin="5,35,0,0" x:Name="photoEditToolbar" VerticalAlignment="Top" Canvas.ZIndex="10"/>
+        <Grid Height="290" HorizontalAlignment="Left" Margin="419,77,0,0" Name="grid1" VerticalAlignment="Top" Width="171">
+            <TextBlock Height="19" HorizontalAlignment="Left" Margin="6,6,0,0" Name="textBlock3" Text="0.1范围：" VerticalAlignment="Top" Width="53" />
+            <TextBlock Height="21" HorizontalAlignment="Left" Margin="95,4,0,0" Name="textBlock1D" Text="0" VerticalAlignment="Top" Width="69" />
+            <TextBlock Height="19" HorizontalAlignment="Left" Margin="6,75,0,0" Name="textBlock4" Text="0.5范围：" VerticalAlignment="Top" Width="53" />
+            <TextBlock Height="19" HorizontalAlignment="Left" Margin="5,146,0,0" Name="textBlock6" Text="0.9范围：" VerticalAlignment="Top" Width="53" />
+            <TextBlock Height="21" HorizontalAlignment="Left" Margin="95,75,0,0" Name="textBlock5D" Text="0" VerticalAlignment="Top" Width="68" />
+            <TextBlock HorizontalAlignment="Left" Margin="95,144,0,125" Name="textBlock9D" Text="0" Width="69" />
+            <Button ToolTipService.ToolTip="0.1范围在对角线上的左位置"  Content="?左边界" Foreground="Blue" Height="21" Margin="12,24,94,0" Name="button1LS" VerticalAlignment="Top" Click="button1LS_Click" />
+            <Button ToolTipService.ToolTip="0.1范围在对角线上的右位置" Content="?右边界" Foreground="Blue" Height="21" HorizontalAlignment="Left" Margin="92,24,0,0" Name="button1RS" VerticalAlignment="Top" Width="67" Click="button1RS_Click" />
+            <Button ToolTipService.ToolTip="0.5范围在对角线上的左位置" Content="?左边界" Foreground="Blue" Height="21" HorizontalAlignment="Left" Margin="12,100,0,0" Name="button5LS" VerticalAlignment="Top" Width="65" Click="button5LS_Click" />
+            <Button ToolTipService.ToolTip="0.5范围在对角线上的右位置" Content="?右边界" Foreground="Blue" Height="21" HorizontalAlignment="Left" Margin="95,100,0,0" Name="button5RS" VerticalAlignment="Top" Width="67" Click="button5RS_Click" />
+            <Button ToolTipService.ToolTip="0.9范围在对角线上的左位置" Content="?左边界" Foreground="Blue" Height="21" HorizontalAlignment="Left" Margin="12,171,0,0" Name="button9LS" VerticalAlignment="Top" Width="65" Click="button9LS_Click" />
+            <Button ToolTipService.ToolTip="0.5范围在对角线上的右位置" Content="?右边界" Foreground="Blue" Height="21" HorizontalAlignment="Left" Margin="96,171,0,0" Name="button9RS" VerticalAlignment="Top" Width="67" Click="button9RS_Click" />
+            <Button Content="计算" Height="23" HorizontalAlignment="Left" Margin="121,211,0,0" Name="buttonCalculate" VerticalAlignment="Top" Width="46" Click="buttonCalculate_Click" />
+            <CheckBox IsChecked="True" Content="焦距大于28mm" Height="18" HorizontalAlignment="Left" Margin="8,215,0,0" Name="checkBoxFocus" VerticalAlignment="Top" Width="110" />
+        </Grid>
+        <my:LChartPhoto Height="290" HorizontalAlignment="Left" Margin="5,77,0,0" x:Name="lChartPhoto1" VerticalAlignment="Top" Width="400" Canvas.ZIndex="5"/>
+        <my3:LPhotoList  Margin="13,85,0,0" x:Name="lPhotoList1" Canvas.ZIndex="6" Visibility="Collapsed" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Grid Height="49" HorizontalAlignment="Left" Margin="425,317,0,0" Name="gridGB" VerticalAlignment="Top" Width="161" Background="Yellow">
+            <TextBlock Height="19" HorizontalAlignment="Left" Margin="6,6,0,0" Name="textBlock1" Text="0.5畸变测试值：" VerticalAlignment="Top" Width="82" />
+            <TextBlock Height="20" HorizontalAlignment="Left" Margin="95,5,0,0" Name="textBlock5Aberration" Text="0" VerticalAlignment="Top" Width="64" />
+            <TextBlock Height="19" HorizontalAlignment="Left" Margin="5,31,0,0" Name="textBlock2" Text="0.9畸变测试值：" VerticalAlignment="Top" Width="82" />
+            <TextBlock Height="20" HorizontalAlignment="Left" Margin="95,30,0,0" Name="textBlock9Aberration" Text="0" VerticalAlignment="Top" Width="63" />
+        </Grid>
+    </Grid>
+</UserControl>

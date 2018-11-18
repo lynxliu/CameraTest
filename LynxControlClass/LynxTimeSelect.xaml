@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="SilverlightLynxControls.LynxTimeSelect"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:my="using:SilverlightLynxControls" 
+             
+             Width="270" Height="121">
+    <Canvas Height="121" Width="270">
+        <Canvas.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF15BA07" Offset="0" />
+                <GradientStop Color="White" Offset="1" />
+            </LinearGradientBrush>
+        </Canvas.Background>
+        <Grid x:Name="DateSelect" Background="#FF9BFFFF" Width="140" Height="90" Canvas.Left="0" Canvas.Top="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="21*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="77*" />
+            </Grid.ColumnDefinitions>
+            <my:LynxUpDown Height="19" HorizontalAlignment="Left"  x:Name="lynxUpDownYear" VerticalAlignment="Top" Width="79" Grid.Column="1" IsTabStop="True"  valueChanged="lynxUpDownYear_valueChanged" />
+            <TextBlock Height="19" HorizontalAlignment="Left" Name="textBlocky" Text="year:" VerticalAlignment="Top" Width="44" Margin="5,0,0,0" />
+            <my:LynxUpDown Height="19" HorizontalAlignment="Left"  x:Name="lynxUpDownMonth" VerticalAlignment="Top" Width="79" Grid.Column="1" Grid.Row="1" valueChanged="lynxUpDownMonth_valueChanged" IntValue="1" />
+            <TextBlock HorizontalAlignment="Left" Name="textBlockm" Text="month:" Width="45" Grid.Row="1" Margin="4,0,0,3" />
+            <my:LynxUpDown Height="19" HorizontalAlignment="Left"  x:Name="lynxUpDownDay" VerticalAlignment="Top" Width="79" Grid.Column="1" Grid.Row="2" valueChanged="lynxUpDownDay_valueChanged" IntValue="1" />
+            <TextBlock Height="19" HorizontalAlignment="Left" Name="textBlockd" Text="day:" VerticalAlignment="Top" Width="44" Grid.Row="2" Margin="5,0,0,0" />
+            <TextBlock Height="19" HorizontalAlignment="Left" Name="textBlockw" Text="Week:" VerticalAlignment="Top" Width="44" Grid.Row="3" Margin="5,0,0,0" />
+            <TextBlock Grid.Column="1" Grid.Row="3" Height="22" HorizontalAlignment="Left" Margin="5,0,0,0" Name="textBlockWeekDay" Text="Sunday" VerticalAlignment="Top" Width="64" />
+        </Grid>
+
+        <Grid x:Name="LayoutRoot" Background="#FFFCF96E" Width="124" Height="90" Canvas.Left="146" Canvas.Top="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21*" />
+            <RowDefinition Height="21*" />
+            <RowDefinition Height="21*" />
+            <RowDefinition Height="21*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="77*" />
+        </Grid.ColumnDefinitions>
+            <my:LynxUpDown Height="19" HorizontalAlignment="Left"  x:Name="lynxUpDownHour" VerticalAlignment="Top" Width="58" Grid.Column="1" Grid.Row="0"  IsTabStop="True" />
+        <TextBlock Height="19" HorizontalAlignment="Left" Name="textBlock1" Text="hour:" VerticalAlignment="Top" Width="46" Margin="5,0,0,0" />
+            <my:LynxUpDown Height="19" HorizontalAlignment="Left"  x:Name="lynxUpDownMinute" VerticalAlignment="Top" Width="58" Grid.Column="1" Grid.Row="1"  />
+        <TextBlock Height="19" HorizontalAlignment="Left" Name="textBlock2" Text="minute:" VerticalAlignment="Top" Width="47" Grid.Row="1" Margin="4,0,0,0" />
+            <my:LynxUpDown Height="19" HorizontalAlignment="Left"  x:Name="lynxUpDownSecond" VerticalAlignment="Top" Width="58" Grid.Column="1" Grid.Row="2" />
+        <TextBlock Height="19" HorizontalAlignment="Left" Name="textBlock3" Text="second:" VerticalAlignment="Top" Width="46" Grid.Row="2" Margin="5,0,0,0" />
+            <my:LynxUpDown Height="19" HorizontalAlignment="Left"  x:Name="lynxUpDownMS" VerticalAlignment="Top" Width="58" Grid.Column="1" Grid.Row="3"  />
+        <TextBlock Height="19" HorizontalAlignment="Left" Name="textBlock4" Text="ms:" VerticalAlignment="Top" Width="22" Grid.Row="3" Margin="5,0,0,0" />
+
+
+    </Grid>
+        <Button Canvas.Left="89" Canvas.Top="95" Content="OK" Height="21" Name="buttonOK" Width="35" FontSize="10" Click="buttonOK_Click" />
+        <Button Canvas.Left="150" Canvas.Top="95" Content="Canel" Height="21" Name="buttonCanel" Width="35" FontSize="10" Click="buttonCanel_Click" />
+    </Canvas>
+</UserControl>

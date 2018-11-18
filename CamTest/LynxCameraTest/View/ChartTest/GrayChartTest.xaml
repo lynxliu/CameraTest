@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="SLPhotoTest.ChartTest.GrayChartTest"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+             xmlns:controls="using:LynxControls"
+             xmlns:slcontrols="using:SilverlightLynxControls"
+             >
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="345*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="518*"/>
+            <ColumnDefinition Width="350"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding ChartName}"></TextBlock>
+            <TextBlock Grid.Column="1" Text="{Binding TestInfo}"></TextBlock>
+        </Grid>
+        <FlipView Name="photolist" ItemsSource="{Binding PhotoList}" SelectedItem="{Binding CurrentPhoto,Mode=TwoWay}" Grid.Row="1">
+            <FlipView.ItemTemplate>
+                <DataTemplate>
+                    <ScrollViewer x:Name="imageScrollViewer" 
+                          HorizontalScrollBarVisibility="Hidden" 
+                          VerticalScrollBarVisibility="Hidden" 
+                          HorizontalScrollMode="Enabled"
+                          VerticalScrollMode="Enabled" 
+                          HorizontalAlignment="Stretch"  
+                          VerticalAlignment="Stretch" 
+                          MinZoomFactor="0.1" MaxZoomFactor="5" >
+                        <controls:LynxPhotoViewControl Photo="{Binding}"  />
+
+                    </ScrollViewer>
+                </DataTemplate>
+            </FlipView.ItemTemplate>
+        </FlipView>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <TextBlock Height="16" Margin="7,15.5,74,0" Name="textBlock1" Text="Bright Changed" VerticalAlignment="Top" Grid.Row="1" />
+                <TextBlock Height="16" HorizontalAlignment="Left" Margin="97,15.5,0,0" Name="TextValue" Text="{Binding BrightChangesValue}" VerticalAlignment="Top" Width="68" Grid.Row="1" />
+                <Button Content="交互式测试" Height="23" HorizontalAlignment="Left" Margin="86,57.5,0,0" 
+                        VerticalAlignment="Top" Width="68" Background="{Binding CustomButtonBrush}" Foreground="Blue" Grid.Row="1"
+                       Command="{Binding CustomSelectPointCommand}" CommandParameter="{Binding ElementName=photolist}" >
+                    <Button.BorderBrush>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#FFA3AEB9" Offset="0" />
+                            <GradientStop Color="#FF8399A9" Offset="0.375" />
+                            <GradientStop Color="#FF718597" Offset="0.375" />
+                            <GradientStop Color="#FF1B90E8" Offset="1" />
+                        </LinearGradientBrush>
+                    </Button.BorderBrush>
+                </Button>
+                <TextBlock Height="36" HorizontalAlignment="Left" Margin="7,81.5,0,0" Text="相似像素数(亮度差小于给定数字):" VerticalAlignment="Top" Width="158" TextWrapping="Wrap" Grid.Row="1" />
+                <TextBlock Height="23" HorizontalAlignment="Left" Margin="45,94.5,0,0" Text="{Binding CustomSelectPointSimularPixelNum}" VerticalAlignment="Top" Width="116" Grid.Row="1" />
+                <Button Content="生成等亮度线" Height="22" HorizontalAlignment="Left" Margin="88,176.5,0,0" Name="button1" VerticalAlignment="Top" Width="81"
+                        Command="{Binding ShowBrightCurveCommand}" CommandParameter="{Binding ElementName=photolist}" Grid.Row="1" />
+                <slcontrols:LynxUpDown Height="21" HorizontalAlignment="Left" Margin="107,152.5,0,0" VerticalAlignment="Top" Width="60" IntValue="{Binding GrayGrade,Mode=TwoWay}" IntMax="10" Grid.Row="1" />
+                <slcontrols:LynxUpDown Height="23" HorizontalAlignment="Left" Margin="7,57.5,0,0" VerticalAlignment="Top" Width="68" IntMax="30" IntValue="{Binding BrightGradeDistance,Mode=TwoWay}" Grid.Row="1" />
+                <TextBlock Height="24" HorizontalAlignment="Left" Margin="7,37.5,0,0" Name="textBlock3" Text="交互式测试,亮度允许差:" VerticalAlignment="Top" Width="134" Grid.Row="1" />
+                <TextBlock Height="20" Margin="6,153.5,67,0" Name="textBlock4" Text="等亮度曲线的级数:" VerticalAlignment="Top" Grid.Row="1" />
+                <Button Content="恢复原始照片" Height="22" HorizontalAlignment="Left" Margin="6,176.5,0,0" Name="buttonResumePhoto" VerticalAlignment="Top" Width="74"
+                        Command="{Binding ShowSourceCommand}" CommandParameter="{Binding ElementName=photolist}" Grid.Row="1" />
+                <Button ToolTipService.ToolTip="拍摄灰度卡，使用国标计算曝光误差"  Content="曝光误差" Height="22" HorizontalAlignment="Left" Margin="107,100.5,0,0" VerticalAlignment="Top" Width="58" Command="{Binding ShowEVCommand}" Grid.Row="1" />
+                <TextBlock Height="21" HorizontalAlignment="Left" Margin="6,127.5,0,0" Text="SNR:" VerticalAlignment="Top" Width="39" Grid.Row="1" />
+                <TextBlock Height="22" HorizontalAlignment="Left" Margin="45,125.5,0,0" Name="SNR"  Text="{Binding SNRValue}" VerticalAlignment="Top" Width="59" Grid.Row="1" />
+                <Button Content="SNR" Height="21" HorizontalAlignment="Left" Margin="106,126.5,0,0" Name="buttonSNR" VerticalAlignment="Top" Width="60" 
+                        Command="{Binding TestSNRCommand}"  Grid.Row="1" />
+            </Grid>
+            <Grid Name="gridGB" Background="Yellow">
+                <TextBlock Height="20" HorizontalAlignment="Left" Margin="6,6,0,0" Text="成像均匀度：" VerticalAlignment="Top" Width="69" />
+                <TextBlock Height="19" HorizontalAlignment="Left" Margin="86,4,0,0" Name="textBlockGBValue" Text="{Binding GBValue}" VerticalAlignment="Top" Width="64" FontSize="12" FontWeight="Bold" />
+                <Button ToolTipService.ToolTip="依据国标计算成像均匀度时候的选区"  Content="选区" HorizontalAlignment="Left" Margin="102,24,0,33" 
+                        Command="{Binding SwitchShowSelectAreaCommand}" CommandParameter="{Binding ElementName=photolist}"
+                        Width="54" />
+                <Button ToolTipService.ToolTip="依据国标各个选区的平均明度曲线"  Content="曲线" Height="21" HorizontalAlignment="Left" Margin="102,51,0,0" 
+                        Command="{Binding SwitchShowBrightCurveCommand}" CommandParameter="{Binding ElementName=photolist}" VerticalAlignment="Top" Width="54" />
+                <TextBlock Height="18" HorizontalAlignment="Left" Margin="8,28,0,0" Name="textBlock6" Text="区域数:" VerticalAlignment="Top" Width="51" />
+                <slcontrols:LynxUpDown Height="19" HorizontalAlignment="Left" Margin="56,27,0,0" Name="lynxUpDownAreaNum" VerticalAlignment="Top" Width="36"
+                                       IntValue="{Binding GBSelectAreaNum,Mode=TwoWay}" />
+                <CheckBox Content="焦距大于28mm" Height="19" HorizontalAlignment="Left" Margin="6,53,0,0" Name="checkBoxFocus" IsChecked="{Binding IsLongFocus,Mode=TwoWay}" VerticalAlignment="Top" Width="93" FontSize="10" />
+            </Grid>
+        </Grid>
+
+    </Grid>
+
+</UserControl>

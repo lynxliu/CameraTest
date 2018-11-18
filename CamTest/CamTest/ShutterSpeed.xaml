@@ -1,0 +1,129 @@
+﻿<UserControl x:Class="SLPhotoTest.ShutterSpeed"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="188" Width="333"
+    >
+    <UserControl.Resources>
+        <ControlTemplate x:Key="ButtonControlTemplate1" TargetType="Button">
+            <Grid Height="25" Width="25">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="FocusStates">
+                        <VisualState x:Name="Focused"/>
+                        <VisualState x:Name="Unfocused"/>
+                    </VisualStateGroup>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Disabled">
+                            <Storyboard>
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Rectangle x:Name="rectangle" Stroke="#FF00B2BA" RadiusX="3" RadiusY="3" Height="20" Width="20" Opacity="0"/>
+                <TextBlock Margin="9,4,4,-4" FontSize="12" Foreground="#FF00B2BA" Text="X" TextWrapping="Wrap"/>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ButtonControlTemplate2" TargetType="Button">
+            <Grid>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="FocusStates">
+                        <VisualState x:Name="Focused"/>
+                        <VisualState x:Name="Unfocused"/>
+                    </VisualStateGroup>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="textBlock" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)">
+                                    <EasingColorKeyFrame KeyTime="00:00:00" Value="White"/>
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <Storyboard>
+                                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="textBlock" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)">
+                                    <EasingColorKeyFrame KeyTime="00:00:00" Value="White"/>
+                                </ColorAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Disabled">
+                            <Storyboard>
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="textBlock" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)">
+                                    <EasingColorKeyFrame KeyTime="00:00:00" Value="White"/>
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Rectangle Stroke="#FF14BDE5" RadiusX="5" RadiusY="5">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFDAF7FB"/>
+                            <GradientStop Color="#FFD5F8FD" Offset="1"/>
+                            <GradientStop Color="#FF41C9DE" Offset="0.656"/>
+                            <GradientStop Color="#FF41C9DE" Offset="0.375"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle x:Name="rectangle" Fill="White" Stroke="#FF14BDE5" RadiusX="5" RadiusY="5"/>
+                <TextBlock x:Name="textBlock" Margin="16,6,15,7" Text="开始" TextWrapping="Wrap" Foreground="#FF028F9B"/>
+            </Grid>
+        </ControlTemplate>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Height="188" Width="333">
+        <Rectangle Margin="12,12,13,12" RadiusX="3" RadiusY="3">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC8C8C8" Offset="1"/>
+                    <GradientStop Color="White" Offset="0.77"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock Height="52" HorizontalAlignment="Left" Margin="47,40,0,0" x:Name="label1" VerticalAlignment="Top" Width="136" Text="倒计时：" FontSize="32" />
+        <TextBlock Height="40" HorizontalAlignment="Left" Margin="168,40,0,0" x:Name="labelBack" VerticalAlignment="Top" Width="79" FontSize="32" Text="5" />
+        <TextBlock Height="29" HorizontalAlignment="Left" Margin="224,119,0,0" x:Name="label4" VerticalAlignment="Top" Width="74" Text="毫秒" FontSize="21.333" />
+        <TextBlock Text="0" FontSize="40" Height="50" HorizontalAlignment="Left" Margin="179,105,0,0" x:Name="label2" VerticalAlignment="Top" Width="58" Foreground="#FFFF3D03" />
+        <Button Content="开始" Height="32" HorizontalAlignment="Left" Margin="238,48,0,0" x:Name="button1" VerticalAlignment="Top" Width="60" Click="button1_Click" Background="#FF009097" FontSize="13.333" FontWeight="Bold" Foreground="#FF028F9B" d:LayoutOverrides="VerticalAlignment" Template="{StaticResource ButtonControlTemplate2}" >
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF00B2BA" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Button Content="X" Height="23" HorizontalAlignment="Left" Margin="292,12,0,0" x:Name="button2" VerticalAlignment="Top" Width="29" Click="button2_Click" Template="{StaticResource ButtonControlTemplate1}" />
+        <TextBlock Height="49" HorizontalAlignment="Left" Margin="80,105,0,0" Name="textBlockMain" Text="000" VerticalAlignment="Top" Width="85" FontSize="40" Foreground="#FFF80D0D" />
+        <Image Height="50" HorizontalAlignment="Left" Margin="0,-2,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="50" Source="/SLPhotoTest;component/images/ShotSpeed.png" />
+    </Grid>
+</UserControl>

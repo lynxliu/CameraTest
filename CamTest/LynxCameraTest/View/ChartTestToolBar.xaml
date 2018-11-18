@@ -1,0 +1,45 @@
+﻿<UserControl
+    x:Class="LynxCameraTest.View.ChartTestToolBar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LynxCameraTest.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    >
+
+    <Grid Height="128">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="128"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="128"/>
+            <ColumnDefinition Width="128"/>
+            <ColumnDefinition Width="156"/>
+            <ColumnDefinition Width="128"/>
+            <ColumnDefinition Width="128"/>
+            <ColumnDefinition Width="128"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="{Binding Icon}" Margin="20"></Image>
+        <TextBlock Grid.Column="1" Foreground="Blue" Margin="20" Text="{Binding Title}" VerticalAlignment="Center"></TextBlock>
+        <Button Grid.Column="2" Command="{Binding AddPhotoCommand}" Margin="20" ToolTipService.ToolTip="Add">
+            <Image Source="ms-appx:///Assets/Toolbar/Add.png"></Image>
+        </Button>
+        <Button Grid.Column="3" Command="{Binding RemovePhotoCommand}" Margin="20" ToolTipService.ToolTip="Remove">
+            <Image Source="ms-appx:///Assets/Toolbar/Remove.png"></Image>
+        </Button>
+        <ToggleSwitch Grid.Column="4" IsOn="{Binding IsShowCurrentResult,Mode=TwoWay}" ToolTipService.ToolTip="Result: All/Current">
+            Is Current Result
+        </ToggleSwitch>
+        <Button Command="{Binding TestAllCommand}" Grid.Column="5" Margin="20" ToolTipService.ToolTip="TestAll">
+            <Image Source="ms-appx:///Assets/Toolbar/TestAll.png"></Image>
+        </Button>
+        <Button Command="{Binding TestCurrentCommand}" Grid.Column="6" Margin="20" ToolTipService.ToolTip="Test Current">
+            <Image Source="ms-appx:///Assets/Toolbar/Test.png"></Image>
+        </Button>
+        
+        <Button Command="{Binding CloseCommand}" Grid.Column="7" Margin="20" ToolTipService.ToolTip="Close">
+            <Image Source="ms-appx:///Assets/Toolbar/Close.png"></Image>
+        </Button>
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="SLPhotoTest.PriceCompanyShow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400" Width="640" Height="480" Background="#FFFCB5B5">
+    
+    <Grid x:Name="LayoutRoot" Background="#FFC1FCAD">
+        <StackPanel Height="31" HorizontalAlignment="Left" Margin="68,44,0,0" Name="stackPanel1" VerticalAlignment="Top" Width="465" Orientation="Horizontal">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC1F8A6" Offset="0" />
+                    <GradientStop Color="#FFE7FCC5" Offset="1" />
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <StackPanel Height="29" Name="stackPanel2" Width="25" Background="#FFD5E7FC" />
+            <ComboBox Height="28" Name="comboBox1" Width="119">
+                <ComboBoxItem Content="ALL" />
+                <ComboBoxItem Content="Sony" />
+                <ComboBoxItem Content="Canon" />
+                <ComboBoxItem Content="Fuji" />
+                <ComboBoxItem Content="Olypase" />
+            </ComboBox>
+            <ComboBox Height="28" Name="comboBox2" Width="119">
+                <ComboBoxItem Content="所有类型" />
+                <ComboBoxItem Content="卡片" />
+                <ComboBoxItem Content="长焦消费" />
+                <ComboBoxItem Content="入门家用" />
+                <ComboBoxItem Content="入门单反" />
+                <ComboBoxItem Content="中端单反" />
+                <ComboBoxItem Content="全画幅" />
+            </ComboBox>
+            <ComboBox Height="28" Name="comboBox3" Width="119">
+                <ComboBoxItem Content="在售产品" />
+                <ComboBoxItem Content="半年内最新产品" />
+                <ComboBoxItem Content="1年内主力产品" />
+                <ComboBoxItem Content="最近发布产品" />
+            </ComboBox>
+            <Button Content="OK" Height="23" Name="button2" Width="75" />
+        </StackPanel>
+        <StackPanel Height="30" HorizontalAlignment="Left" Name="TitleArea" VerticalAlignment="Top" Width="640" Orientation="Horizontal">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF84EB33" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Button Content="X" Height="23" Name="button1" Width="18" Click="button1_Click" />
+        </StackPanel>
+    </Grid>
+</UserControl>

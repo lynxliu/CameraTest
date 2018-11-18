@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="StoryDesignControls.ProjectUI.LynxRecordControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Width="330" Height="135">
+    
+    <Grid x:Name="LayoutRoot" Background="White" Width="330" Height="135">
+        <TextBlock Height="20" HorizontalAlignment="Left" Margin="10,10,0,0" Name="textBlockName" Text="记录：" VerticalAlignment="Top" />
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="10,36,5,5">
+            <StackPanel Height="85" HorizontalAlignment="Left" Name="stackRecordList" VerticalAlignment="Top" Width="305" />
+        </ScrollViewer>
+        <TextBox Margin="45,10,55,0" Name="textEditRecord" VerticalAlignment="Top" />
+        <Button Content="+" Height="21" HorizontalAlignment="Left" Margin="282,10,0,0" Name="buttonAdd" VerticalAlignment="Top" Width="21" Click="buttonAdd_Click" />
+        <Button Content="-" Height="21" HorizontalAlignment="Left" Margin="305,10,0,0" Name="buttonRemove" VerticalAlignment="Top" Width="21" Click="buttonRemove_Click" />
+    </Grid>
+</UserControl>

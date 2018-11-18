@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="SLPhotoTest.TestToolBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignHeight="113">
+
+    <StackPanel HorizontalAlignment="Left"  Width="66" Background="#FFC9C5C5" Height="109">
+        <StackPanel x:Name="MA" Height="16" Background="#FF7F6BF8"/>
+        <Button Content="成像" Click="Button_Click" />
+        <Button Content="人脸" Click="Button_Click_1" />
+        <Button Content="反应速度" Click="Button_Click_2" />
+        <Button Content="计时器" Click="ButtonTimer" />
+    </StackPanel>
+</UserControl>

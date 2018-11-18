@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="SLPhotoTest.PhotoEdit.ColorSelect"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="210" d:DesignWidth="259">
+    
+    <Grid x:Name="LayoutRoot" Background="White" Width="250" Height="200">
+        <TextBlock Height="20" HorizontalAlignment="Left" Margin="12,34,0,0" Name="textBlock1" Text="R:" VerticalAlignment="Top" Width="41" />
+        <TextBlock Height="20" HorizontalAlignment="Left" Margin="12,60,0,0" Name="textBlock2" Text="G:" VerticalAlignment="Top" Width="41" />
+        <TextBlock Height="20" HorizontalAlignment="Left" Margin="12,88,0,0" Name="textBlock3" Text="B:" VerticalAlignment="Top" Width="41" />
+        <Slider Height="17" HorizontalAlignment="Left" Margin="71,38,0,0" Name="sliderR" VerticalAlignment="Top" Width="162" Maximum="255" SmallChange="1" LargeChange="10" Value="255" ValueChanged="sliderR_ValueChanged" />
+        <Slider Height="17" HorizontalAlignment="Left" Margin="71,63,0,0" Name="sliderG" VerticalAlignment="Top" Width="162" LargeChange="10" SmallChange="1" Maximum="255" Value="255" ValueChanged="sliderG_ValueChanged" />
+        <Slider Height="17" HorizontalAlignment="Left" Margin="71,91,0,0" Name="sliderB" VerticalAlignment="Top" Width="162" Maximum="255" LargeChange="10" SmallChange="1" Value="255" ValueChanged="sliderB_ValueChanged" />
+        <Rectangle Height="64" HorizontalAlignment="Left" Margin="42,115,0,0" Name="RegColor" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="65" />
+        <Button Content="OK" Height="29" HorizontalAlignment="Left" Margin="136,150,0,0" Name="buttonOK" VerticalAlignment="Top" Width="66" Click="buttonOK_Click" />
+        <Button Content="X" Height="27" HorizontalAlignment="Left" Margin="220,0,0,0" Name="buttonClose" VerticalAlignment="Top" Width="26" Click="buttonClose_Click" />
+        <TextBlock Height="28" HorizontalAlignment="Left" Margin="83,6,0,0" Name="textBlock4" Text="颜色选择" VerticalAlignment="Top" Width="104" />
+    </Grid>
+</UserControl>

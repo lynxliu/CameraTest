@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3384950-C0E2-4569-B8A1-CAF39A88635F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LynxControlClass</RootNamespace>
+    <AssemblyName>LynxControlClass</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <ProjectReference Include="..\DCTestLibrary\DCTestLibrary.csproj">
+      <Project>{8317e0c7-148a-40ba-9b68-1e48641c0379}</Project>
+      <Name>DCTestLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LFC\LFC.csproj">
+      <Project>{50714eaa-f625-461d-aa5d-d1fc3b6303e8}</Project>
+      <Name>LFC</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionActive.cs" />
+    <Compile Include="ActionAnimationShow.cs" />
+    <Compile Include="ActionConnect.cs" />
+    <Compile Include="ActionDataShow.cs" />
+    <Compile Include="ActionDialog.cs" />
+    <Compile Include="ActionDragDrop.cs" />
+    <Compile Include="ActionLineLink.cs" />
+    <Compile Include="ActionLink.cs" />
+    <Compile Include="ActionMove.cs" />
+    <Compile Include="ActionResize.cs" />
+    <Compile Include="ActionResizeBorder.cs" />
+    <Compile Include="ActionRotate.cs" />
+    <Compile Include="ActionShow.cs" />
+    <Compile Include="ChildWindowAbout.xaml.cs">
+      <DependentUpon>ChildWindowAbout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ILynxDataEdit.cs" />
+    <Compile Include="Data\ILynxDataItem.cs" />
+    <Compile Include="Data\LynxDataIconList.xaml.cs">
+      <DependentUpon>LynxDataIconList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LynxDataItem.xaml.cs">
+      <DependentUpon>LynxDataItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LynxDataPageNav.xaml.cs">
+      <DependentUpon>LynxDataPageNav.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LynxDataRowList.xaml.cs">
+      <DependentUpon>LynxDataRowList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LynxDataView.xaml.cs">
+      <DependentUpon>LynxDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Design\IDesignCanvas.cs" />
+    <Compile Include="Design\IDesignObject.cs" />
+    <Compile Include="Design\LynxAnchorPoint.xaml.cs">
+      <DependentUpon>LynxAnchorPoint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Design\LynxConnectControl.cs" />
+    <Compile Include="Design\LynxConnectionLine.cs" />
+    <Compile Include="Design\LynxConnectLine.cs" />
+    <Compile Include="Design\LynxConnectPoint.xaml.cs">
+      <DependentUpon>LynxConnectPoint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Design\LynxDefaultNode.xaml.cs">
+      <DependentUpon>LynxDefaultNode.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Design\LynxDeseignCanvas.xaml.cs">
+      <DependentUpon>LynxDeseignCanvas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Design\LynxDesignObject.cs" />
+    <Compile Include="Design\LynxParentLine.cs" />
+    <Compile Include="DragDrop\ActionDragDrop.cs" />
+    <Compile Include="IConnection.cs" />
+    <Compile Include="IConnectObject.cs" />
+    <Compile Include="IDragDrop.cs" />
+    <Compile Include="ILine.cs" />
+    <Compile Include="ILynxControl.cs" />
+    <Compile Include="ILynxIcon.cs" />
+    <Compile Include="ILynxWindow.cs" />
+    <Compile Include="IMove.cs" />
+    <Compile Include="IResize.cs" />
+    <Compile Include="LogicView\AbstractLogicView.cs" />
+    <Compile Include="LogicView\Diagram.cs" />
+    <Compile Include="LogicView\ISuportLogicView.cs" />
+    <Compile Include="LogicView\IViewItem.cs" />
+    <Compile Include="LogicView\ViewAnchorPoint.cs" />
+    <Compile Include="LogicView\ViewItem.cs" />
+    <Compile Include="LogicView\ViewLineItem.cs" />
+    <Compile Include="LynxActionBar.xaml.cs">
+      <DependentUpon>LynxActionBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LynxArrow.cs" />
+    <Compile Include="LynxArrowLine.cs" />
+    <Compile Include="LynxAutoShowPanel.xaml.cs">
+      <DependentUpon>LynxAutoShowPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LynxButton.xaml.cs">
+      <DependentUpon>LynxButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LynxControls\IDataControl.cs" />
+    <Compile Include="LynxControls\LynxDrawHistogram.xaml.cs">
+      <DependentUpon>LynxDrawHistogram.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LynxControls\LynxScrollTabControl.xaml.cs">
+      <DependentUpon>LynxScrollTabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LynxDateTimeEdit.xaml.cs">
+      <DependentUpon>LynxDateTimeEdit.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LynxDateTimeSelect.xaml.cs">
+      <DependentUpon>LynxDateTimeSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LynxDesktop.xaml.cs">
+      <DependentUpon>LynxDesktop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LynxIcon.xaml.cs">
+      <DependentUpon>LynxIcon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LynxMenu.xaml.cs">
+      <DependentUpon>LynxMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LynxNotepad.xaml.cs">
+      <DependentUpon>LynxNotepad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LynxPhotoViewControl.xaml.cs">
+      <DependentUpon>LynxPhotoViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LynxRecordControl.xaml.cs">
+      <DependentUpon>LynxRecordControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LynxTimeLine.xaml.cs">
+      <DependentUpon>LynxTimeLine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LynxTimeManager.cs" />
+    <Compile Include="LynxTimeSelect.xaml.cs">
+      <DependentUpon>LynxTimeSelect.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LynxTreeItem.xaml.cs">
+      <DependentUpon>LynxTreeItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LynxUpDown.xaml.cs">
+      <DependentUpon>LynxUpDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LynxWindow.xaml.cs">
+      <DependentUpon>LynxWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LynxWindowButton.xaml.cs">
+      <DependentUpon>LynxWindowButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LynxWindowIcon.xaml.cs">
+      <DependentUpon>LynxWindowIcon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectMonitorUI\IObjectMonitor.cs" />
+    <Compile Include="ObjectPanel\IPanelShowObject.cs" />
+    <Compile Include="ObjectPanel\LynxObjectPanel.xaml.cs">
+      <DependentUpon>LynxObjectPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectPanel\LynxObjectPanelItem.xaml.cs">
+      <DependentUpon>LynxObjectPanelItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectPanel\LynxPanelObjectControl.xaml.cs">
+      <DependentUpon>LynxPanelObjectControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectPanel\ViewModelLynxPanelObjectControl.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeLine\ITimeLineControl.cs" />
+    <Compile Include="TimeLine\ITimeLineObject.cs" />
+    <Compile Include="UILogic.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ChildWindowAbout.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\LynxDataIconList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\LynxDataItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\LynxDataPageNav.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\LynxDataRowList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\LynxDataView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Design\LynxAnchorPoint.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Design\LynxConnectPoint.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Design\LynxDefaultNode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Design\LynxDeseignCanvas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxActionBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxAutoShowPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxControls\LynxDrawHistogram.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxControls\LynxScrollTabControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxDateTimeEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LynxDateTimeSelect.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxDesktop.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxIcon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxNotepad.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxPhotoViewControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxRecordControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxTimeLine.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxTimeSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LynxTreeItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxUpDown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxWindowButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LynxWindowIcon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ObjectPanel\LynxObjectPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ObjectPanel\LynxObjectPanelItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ObjectPanel\LynxPanelObjectControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Close.png" />
+    <Content Include="Icon.png" />
+    <Content Include="Images\arrow-down-3.png" />
+    <Content Include="Images\arrow-up-3.png" />
+    <Content Include="Images\bookmark-new.png" />
+    <Content Include="Images\clock.png" />
+    <Content Include="Images\Close.png" />
+    <Content Include="Images\document-save.png" />
+    <Content Include="Images\freemind.png" />
+    <Content Include="Images\mark.png" />
+    <Content Include="Images\ToIcon.png" />
+    <Content Include="Images\window-close.png" />
+    <Content Include="Images\zoom-in.png" />
+    <Content Include="Images\zoom-out.png" />
+    <Content Include="Max.png" />
+    <Content Include="Min.png" />
+    <Content Include="Resume.png" />
+    <Content Include="ZoomIn.png" />
+    <Content Include="ZoomOut.png" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

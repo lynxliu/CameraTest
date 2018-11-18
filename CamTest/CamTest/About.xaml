@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="SLPhotoTest.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="145" d:DesignWidth="261">
+    
+    <Grid x:Name="LayoutRoot" Width="260" Height="142">
+        <TextBlock Height="56" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textBlock1" Text="软件感谢这些年参与工作的人：IrisLiu，UULi，LyraLiang，陈海明，邵梅，晓光，蝴蝶" VerticalAlignment="Top" Width="236" TextWrapping="Wrap" />
+        <Button Content="确定" Height="30" HorizontalAlignment="Left" Margin="68,106,0,0" Name="button1" VerticalAlignment="Top" Width="86" Click="button1_Click" />
+        <TextBlock Height="51" HorizontalAlignment="Left" Margin="11,53,0,0" Name="textBlock2" Text="软件研发开始于2003年开始测试相机，2005年12月首测DV，2007年完成第一个版本" VerticalAlignment="Top" Width="237" TextWrapping="Wrap" />
+        <Image Height="44" HorizontalAlignment="Left" Margin="-26,-21,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="50" Source="/SLPhotoTest;component/logo.png" />
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFB1F83D" Offset="0" />
+                <GradientStop Color="White" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+    </Grid>
+</UserControl>

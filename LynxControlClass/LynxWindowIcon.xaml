@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="SilverlightLynxControls.LynxWindowIcon"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" PointerEntered="UserControl_PointerEntered" 
+             PointerExited="UserControl_PointerExited" Width="50" Height="50">
+
+    <Canvas x:Name="LayoutRoot" Background="Transparent"  Width="50" Height="50">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualStateGroup.Transitions>
+                    <VisualTransition GeneratedDuration="00:00:00.1000000"/>
+                </VisualStateGroup.Transitions>
+                <VisualState x:Name="Active">
+                    <Storyboard>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="IconImage" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                            <EasingDoubleKeyFrame KeyTime="00:00:00" Value="70"/>
+                        </DoubleAnimationUsingKeyFrames>
+                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="IconImage" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                            <EasingDoubleKeyFrame KeyTime="00:00:00" Value="70"/>
+                        </DoubleAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Canvas Name="IconMain">
+            <TextBlock Name="Title">xxxxxx</TextBlock>
+            <Image Name="IconImage" Source="/SilverlightLynxControls;component/Icon.png" Stretch="Uniform" Height="50" Width="50" PointerPressed="LayoutRoot_PointerPressed"></Image>
+        </Canvas>
+        <Popup x:Name="LynxWindowMenu" Height="120" Width="70" Canvas.Top="35" Canvas.Left="0" IsOpen="False" >
+            <StackPanel Height="180" Width="70" >
+
+                <Button x:Name="MenuClose" Height="30" HorizontalAlignment="Left" Width="70" Content="关闭" Click="CloseButton_Click"/>
+                <Button x:Name="MenuArrage" Height="30" HorizontalAlignment="Left" Width="70" Content="排列" Click="ArrageButton_Click"/>
+                <Button x:Name="MenuToIcon" Height="30" HorizontalAlignment="Left" Width="70" Content="恢复" Click="MenuToIcon_Click"/>
+
+                <Button x:Name="MenuAbout" Height="30" HorizontalAlignment="Left" Width="70" Content="关于" Click="MenuAbout_Click"/>
+            </StackPanel>
+        </Popup>
+    </Canvas>
+</UserControl>

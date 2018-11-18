@@ -1,0 +1,78 @@
+﻿<UserControl
+    x:Class="PhotoTestControl.Views.LynxPhotoTestView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhotoTestControl.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="600" Width="1200"
+    ManipulationMode="All"
+    >
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="96"/>
+            <RowDefinition Height="242*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="239*"/>
+            <ColumnDefinition Width="500"/>
+        </Grid.ColumnDefinitions>
+        <FlipView Grid.RowSpan="2" ItemsSource="{Binding PhotoList}">
+            <FlipView.ItemTemplate>
+                <DataTemplate>
+                    <Image Source="{Binding}"></Image>
+                </DataTemplate>
+            
+            </FlipView.ItemTemplate>
+        </FlipView>
+        <Grid Grid.ColumnSpan="2" Margin="-32,-32,0,0" Height="128">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="128"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="128"/>
+                <ColumnDefinition Width="128"/>
+                <ColumnDefinition Width="128"/>
+                <ColumnDefinition Width="128"/>
+                <ColumnDefinition Width="128"/>
+                <ColumnDefinition Width="128"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="{Binding Icon}" ></Image>
+            <TextBlock Grid.Column="1" Foreground="Blue" Text="{Binding Title}" VerticalAlignment="Center"></TextBlock>
+            <Button Grid.Column="2" Command="{Binding AddPhotoCommand}" VerticalAlignment="Stretch" ToolTipService.ToolTip="Add">
+                <Image Source="ms-appx:///PhotoEditControl/Images/Add.png"></Image>
+            </Button>
+            <Button Grid.Column="3" Command="{Binding RemovePhotoCommand}" VerticalAlignment="Stretch" ToolTipService.ToolTip="Remove">
+                <Image Source="ms-appx:///PhotoEditControl/Images/Remove.png"></Image>
+            </Button>
+            <Button Grid.Column="4" VerticalAlignment="Stretch" ToolTipService.ToolTip="Result: All/Current">
+                <Image Source="ms-appx:///PhotoEditControl/Images/Operation/MoreResult.png"></Image>
+            </Button>
+            <Button Grid.Column="5" VerticalAlignment="Stretch" ToolTipService.ToolTip="TestAll">
+                <Image Source="ms-appx:///PhotoEditControl/Images/TestAll.png"></Image>
+            </Button>
+            <Button Grid.Column="6" VerticalAlignment="Stretch" ToolTipService.ToolTip="Test Current">
+                <Image Source="ms-appx:///PhotoEditControl/Images/Test.png"></Image>
+            </Button>
+            <Button Grid.Column="7" VerticalAlignment="Stretch" ToolTipService.ToolTip="Close">
+                <Image Source="ms-appx:///PhotoEditControl/Images/Close.png"></Image>
+            </Button>
+        </Grid>
+        <Grid Name="Result" Grid.Row="1" Grid.Column="1">
+            <ListBox ItemsSource="{Binding CurrentResult}" Background="LightCyan">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Name}" ToolTipService.ToolTip="{Binding Memo}" Margin="3"></TextBlock>
+                            <TextBlock Text=":" Margin="3"></TextBlock>
+                            <TextBlock Text="{Binding Value}" Margin="3" />
+                            <TextBlock Text="{Binding Dimention}" Margin="3" />
+                            <Button Content="{Binding Details}" Margin="3" Command="{Binding MoreDetailCommand}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </Grid>
+</UserControl>

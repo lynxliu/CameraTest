@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="SLPhotoTest.PhotoTest.PurplePercent"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" 
+             xmlns:testtoolbar="using:SLPhotoTest.PhotoTest"
+    Width="640" Height="480" 
+             xmlns:my="using:SilverlightLynxControls"
+             xmlns:my1="using:SLPhotoTest">
+    <Grid x:Name="LayoutRoot" Width="640" Height="480">
+        <Rectangle RadiusX="5" RadiusY="5" Width="640" Height="480">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.607,1.075" StartPoint="0.226,0.007">
+                    <GradientStop Color="#FF00A3BC" Offset="0.605"/>
+                    <GradientStop Color="#FF41C9DE"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Fill="White" RadiusX="5" RadiusY="5" Margin="8,32,8,8"/>
+        <Canvas x:Name="Title" Height="25" VerticalAlignment="Top"  Margin="5,5,5,0">
+            <Image Name="Icon" Source="/SLPhotoTest;component/PhotoTest/Images/Parameter/PPPercent.png" Height="50" Canvas.Left="-25" Canvas.Top="-25" Width="50"></Image>
+            <testtoolbar:PhotoTestToolbar Canvas.Left="20" Canvas.Top="-15" Height="37" x:Name="photoTestToolbar1" Width="367" />
+            <TextBlock Width="205" TextWrapping="Wrap" Canvas.Left="395" Height="25" FontSize="20" Canvas.Top="0" FontFamily="Trebuchet MS"><Run Text="边缘紫边像素比例"/></TextBlock>
+            <Button Width="25" Height="25" Click="buttonHelp_Click" Canvas.Left="575" Canvas.Top="0" ToolTipService.ToolTip="帮助信息">
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/Images/help.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button Width="25" Height="25" Click="buttonClose_Click" Canvas.Left="600" Canvas.Top="0" ToolTipService.ToolTip="关闭">
+                <Button.Content>
+                    <Image Source="/SLPhotoTest;component/Images/close.png"></Image>
+                </Button.Content>
+            </Button>
+        </Canvas>
+        <StackPanel Background="#FFC9F3F8" Height="100" HorizontalAlignment="Left" Margin="8,34,0,0" x:Name="stackBitmapList" VerticalAlignment="Top" Width="620"  Orientation="Horizontal"/>
+        <TextBlock Height="28" HorizontalAlignment="Left" Margin="508,391,0,0" x:Name="textPruplePercent" Text="0" VerticalAlignment="Top" Width="68" />
+        <TextBlock Height="28" HorizontalAlignment="Left" Margin="443,428,0,0" x:Name="textBlock1" Text="紫边范围" VerticalAlignment="Top" Width="55" />
+        <Border Margin="10,140,237,12" BorderBrush="Blue" BorderThickness="2" CornerRadius="3">
+            <Canvas Height="326" HorizontalAlignment="Left"  x:Name="DrawCanvas" VerticalAlignment="Top" Width="390" />
+        </Border>
+        <my:LynxUpDown Height="23" HorizontalAlignment="Left" Margin="508,425,0,0" Name="lynxUpDown1" VerticalAlignment="Top" Width="73" IntMin="1" IntValue="15" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="586,432,0,0" Name="textBlock2" Text="度" VerticalAlignment="Top" Width="30" />
+        <TextBlock Height="22" HorizontalAlignment="Left" Margin="444,393,0,0" Name="textBlock3" Text="紫边比例：" VerticalAlignment="Top" Width="54" />
+        <my1:LChartPhoto Height="226" HorizontalAlignment="Left" Margin="404,140,0,0" x:Name="lChartPhoto1" VerticalAlignment="Top" Width="225" />
+    </Grid>
+</UserControl>

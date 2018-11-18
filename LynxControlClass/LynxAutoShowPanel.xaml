@@ -1,0 +1,25 @@
+﻿<UserControl x:Name="userControl" x:Class="SilverlightLynxControls.LynxAutoShowPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="30" Width="120" SizeChanged="UserControl_SizeChanged">
+	<UserControl.Resources>
+		<Storyboard x:Name="StoryboardShow">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="userControl">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="StoryboardHide">
+			<DoubleAnimation Duration="0:0:1" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="userControl" d:IsOptimized="True"/>
+		</Storyboard>
+	</UserControl.Resources>
+    
+    <Canvas x:Name="LayoutRoot" Background="White" 
+            PointerEntered="LayoutRoot_MouseEntered" 
+            PointerExited="LayoutRoot_MouseExited">
+
+    </Canvas>
+</UserControl>
